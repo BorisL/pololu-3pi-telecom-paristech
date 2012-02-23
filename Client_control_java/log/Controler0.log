@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2012-02-23T17:47:40</date>
+  <millis>1330015660441</millis>
+  <sequence>1</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>init</method>
+  <thread>10</thread>
+  <message>Console handler initialized</message>
+</record>
+<record>
+  <date>2012-02-23T17:47:40</date>
+  <millis>1330015660577</millis>
+  <sequence>2</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>init</method>
+  <thread>10</thread>
+  <message>RabbitMQ queue initialized</message>
+</record>
+<record>
+  <date>2012-02-23T17:47:40</date>
+  <millis>1330015660577</millis>
+  <sequence>3</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "Salut!" to queue "controler_Boris"</message>
+</record>
+</log>
