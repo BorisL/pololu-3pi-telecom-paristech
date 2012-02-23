@@ -1,0 +1,6 @@
+#!/bin/bash
+#run the server
+echo -- start server --
+export RABBITMQ_PATH=../../RabbitMQ-java
+export CP=.:$RABBITMQ_PATH/commons-io-1.2.jar:$RABBITMQ_PATH/commons-cli-1.1.jar:$RABBITMQ_PATH/rabbitmq-client.jar
+java -cp $CP Server localhost
