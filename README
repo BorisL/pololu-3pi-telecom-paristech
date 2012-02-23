@@ -1,0 +1,11 @@
+                 ** Pololu 3pi maze explorer **
+
+author : Boris Liger
+e-mail : boris.liger@gmail.com
+
+This project provide programs and libraries to controle a Pololu 3pi robot (www.pololu.com/catalog/product/975) using an XBee Pro chipset for wireless controle.
+
+The functionnal goal is to offer to 1st years students (from Telecom ParisTech) a new project subject. They will implement a client program (in Java) which send orders to the Pololu 3pi and explor an unknown maze. They will use a given library and use proposed functions to move the robot.
+
+This project propose one C code for Pololu 3pi robot. One server code in Java which takes order from clients and sends real orders to 3pi robot. And some clients codes to send basics order.
+
