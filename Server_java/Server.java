@@ -27,7 +27,7 @@ public class Server {
       System.out.println(" [x] Received '" + message + "'");
 
       
-      channel.basicPublish("", "controler_Boris", null, message.getBytes());
+      channel.basicPublish("", "Boris", null, ("J'ai bien recu "+message).getBytes());
       
     }
   }

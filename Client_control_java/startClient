@@ -2,5 +2,6 @@
 #run the server
 echo -- start controler --
 export RABBITMQ_PATH=../../RabbitMQ-java
-export CP=.:$RABBITMQ_PATH/commons-io-1.2.jar:$RABBITMQ_PATH/commons-cli-1.1.jar:$RABBITMQ_PATH/rabbitmq-client.jar
+export CONTROLER=../Controler_lib
+export CP=.:$RABBITMQ_PATH/commons-io-1.2.jar:$RABBITMQ_PATH/commons-cli-1.1.jar:$RABBITMQ_PATH/rabbitmq-client.jar:$CONTROLER/Controler.jar
 java -cp $CP Client localhost Boris

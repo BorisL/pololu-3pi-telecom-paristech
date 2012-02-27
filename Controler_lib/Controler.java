@@ -11,11 +11,11 @@ import java.util.logging.FileHandler;
 public class Controler {
     private static Connection connection;
     private static Channel channel;
-    private static String QUEUE_NAME = "controler_";
+    private static QueueingConsumer consumer;
     private static Logger logger;
     private static FileHandler ch;
 
-    public static void init(String AMQPServerAdress, String ControlerName) throws Exception 
+    public static void init(String AMQPServerAdress, String controlerName) throws Exception 
     {
 	// init logger
 	logger = Logger.getLogger("logger");
@@ -33,22 +33,34 @@ public class Controler {
         connection = factory.newConnection();
 	channel = connection.createChannel();
 
-	QUEUE_NAME += ControlerName;
-	channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+	channel.queueDeclare(controlerName, false, false, false, null);
+
+	consumer = new QueueingConsumer(channel);
+	channel.basicConsume(controlerName, true, consumer);
+
 	logger.log(Level.INFO, "RabbitMQ queue initialized");
     	   
     }
 
+    public static void setLogLevel(Level level)
+    {
+	logger.setLevel(level);
+	logger.log(Level.INFO, "New log level set to "+level.toString());
+    }
+
+    public static void log(Level level, String message)
+    {
+	logger.log(level, message);
+    }
+
     public static void send(String message, String queueName) throws Exception 
     {
-	logger.log(Level.INFO, "Send message \""+message+"\" to queue \""+QUEUE_NAME+"\"");
+	logger.log(Level.INFO, "Send message \""+message+"\" to queue \""+queueName+"\"");
 	channel.basicPublish("", queueName, null, message.getBytes());
     }
 
     public static String recieve() throws Exception 
     {
-	QueueingConsumer consumer = new QueueingConsumer(channel);
-	channel.basicConsume(QUEUE_NAME, true, consumer);
 	QueueingConsumer.Delivery delivery = consumer.nextDelivery();
 	return new String(delivery.getBody());
     }

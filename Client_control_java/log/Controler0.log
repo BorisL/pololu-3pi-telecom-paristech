@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2012-02-23T17:47:40</date>
-  <millis>1330015660441</millis>
+  <date>2012-02-27T12:45:09</date>
+  <millis>1330343109861</millis>
   <sequence>1</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -13,8 +13,8 @@
   <message>Console handler initialized</message>
 </record>
 <record>
-  <date>2012-02-23T17:47:40</date>
-  <millis>1330015660577</millis>
+  <date>2012-02-27T12:45:10</date>
+  <millis>1330343110015</millis>
   <sequence>2</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -24,14 +24,14 @@
   <message>RabbitMQ queue initialized</message>
 </record>
 <record>
-  <date>2012-02-23T17:47:40</date>
-  <millis>1330015660577</millis>
+  <date>2012-02-27T12:45:10</date>
+  <millis>1330343110016</millis>
   <sequence>3</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "Salut!" to queue "controler_Boris"</message>
+  <message>Send message "Salut!" to queue "pololu"</message>
 </record>
 </log>
