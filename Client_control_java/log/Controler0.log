@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2012-02-27T12:45:09</date>
-  <millis>1330343109861</millis>
+  <date>2012-03-03T01:39:01</date>
+  <millis>1330735141555</millis>
   <sequence>1</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -13,8 +13,8 @@
   <message>Console handler initialized</message>
 </record>
 <record>
-  <date>2012-02-27T12:45:10</date>
-  <millis>1330343110015</millis>
+  <date>2012-03-03T01:39:01</date>
+  <millis>1330735141706</millis>
   <sequence>2</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -24,8 +24,8 @@
   <message>RabbitMQ queue initialized</message>
 </record>
 <record>
-  <date>2012-02-27T12:45:10</date>
-  <millis>1330343110016</millis>
+  <date>2012-03-03T01:39:01</date>
+  <millis>1330735141707</millis>
   <sequence>3</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -33,5 +33,38 @@
   <method>send</method>
   <thread>10</thread>
   <message>Send message "Salut!" to queue "pololu"</message>
+</record>
+<record>
+  <date>2012-03-03T01:39:01</date>
+  <millis>1330735141712</millis>
+  <sequence>4</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>10</thread>
+  <message>Recieve message "[B@16fe0f4" from queue "Boris"</message>
+</record>
+<record>
+  <date>2012-03-03T01:39:01</date>
+  <millis>1330735141713</millis>
+  <sequence>5</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>log</method>
+  <thread>10</thread>
+  <message>After receive</message>
+</record>
+<record>
+  <date>2012-03-03T01:39:01</date>
+  <millis>1330735141720</millis>
+  <sequence>6</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>log</method>
+  <thread>10</thread>
+  <message>After close</message>
 </record>
 </log>

@@ -14,7 +14,7 @@ public class Controler {
     private static QueueingConsumer consumer;
     private static Logger logger;
     private static FileHandler ch;
-
+    private static String myQueueName;
     public static void init(String AMQPServerAdress, String controlerName) throws Exception 
     {
 	// init logger
@@ -34,7 +34,7 @@ public class Controler {
 	channel = connection.createChannel();
 
 	channel.queueDeclare(controlerName, false, false, false, null);
-
+	myQueueName = controlerName;
 	consumer = new QueueingConsumer(channel);
 	channel.basicConsume(controlerName, true, consumer);
 
@@ -59,9 +59,10 @@ public class Controler {
 	channel.basicPublish("", queueName, null, message.getBytes());
     }
 
-    public static String recieve() throws Exception 
+    public static String receive() throws Exception 
     {
 	QueueingConsumer.Delivery delivery = consumer.nextDelivery();
+	logger.log(Level.INFO, "Receive message \""+new String(delivery.getBody())+"\" from queue \""+myQueueName+"\"");
 	return new String(delivery.getBody());
     }
 

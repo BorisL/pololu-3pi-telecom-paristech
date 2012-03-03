@@ -1,11 +1,11 @@
 JC = javac
-JFLAGS = -cp
-RABBITMQ = ../../RabbitMQ-java
 
-serv:
-	$(JC) $(JFLAGS) $(RABBITMQ)/rabbitmq-client.jar Server.java
+CONTROLER = ../Controler_lib/Controler.jar
 
 all: serv
+
+serv:
+	$(JC) -classpath $(CONTROLER) Server.java
 
 clean:
 	rm Server.class

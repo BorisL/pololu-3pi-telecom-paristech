@@ -1,34 +1,22 @@
-//RabbitMQ import
-import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.QueueingConsumer;
+import java.util.logging.Level;
 
 public class Server {
 
-    private final static String QUEUE_NAME = "pololu";
-
-    public static void main(String[] argv) throws Exception {
-
-    ConnectionFactory factory = new ConnectionFactory();
-    factory.setHost(argv[0]);
-    Connection connection = factory.newConnection();
-    Channel channel = connection.createChannel();
-
-    channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-    System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
-    
-    QueueingConsumer consumer = new QueueingConsumer(channel);
-    channel.basicConsume(QUEUE_NAME, true, consumer);
-    
-    while (true) {
-      QueueingConsumer.Delivery delivery = consumer.nextDelivery();
-      String message = new String(delivery.getBody());
-      System.out.println(" [x] Received '" + message + "'");
-
-      
-      channel.basicPublish("", "Boris", null, ("J'ai bien recu "+message).getBytes());
-      
+    public static void main(String[] argv) throws Exception 
+    {
+	if(argv.length != 2)
+	    {
+		System.out.println("Use: Server AMQPServerAdress ControlerName");
+		System.exit(1);
+	    }
+	Controler.init(argv[0],argv[1]);
+	while (true) {
+	    Controler.log(Level.INFO, "Waiting message from queue ...");
+	    Controler.receive();
+	    Controler.send("J'ai bien recu!","Boris");
+	}
     }
-  }
+
+   
+
 }
