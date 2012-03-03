@@ -12,8 +12,8 @@ public class Server {
 	Controler.init(argv[0],argv[1]);
 	while (true) {
 	    Controler.log(Level.INFO, "Waiting message from queue ...");
-	    Controler.receive();
-	    Controler.send("J'ai bien recu!","Boris");
+	    Message m = Controler.receive();
+	    Controler.send(m.reply("J'ai bien recu!"));
 	}
     }
 

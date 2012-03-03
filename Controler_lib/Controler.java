@@ -9,12 +9,14 @@ import java.util.logging.Logger;
 import java.util.logging.FileHandler;
 
 public class Controler {
+
     private static Connection connection;
     private static Channel channel;
     private static QueueingConsumer consumer;
     private static Logger logger;
     private static FileHandler ch;
     private static String myQueueName;
+
     public static void init(String AMQPServerAdress, String controlerName) throws Exception 
     {
 	// init logger
@@ -53,17 +55,17 @@ public class Controler {
 	logger.log(level, message);
     }
 
-    public static void send(String message, String queueName) throws Exception 
+    public static void send(Message m) throws Exception 
     {
-	logger.log(Level.INFO, "Send message \""+message+"\" to queue \""+queueName+"\"");
-	channel.basicPublish("", queueName, null, message.getBytes());
+	logger.log(Level.INFO, "Send message \""+m.getMessage()+"\"");
+	channel.basicPublish("", m.getTo(), null, m.getMessage().getBytes());
     }
 
-    public static String receive() throws Exception 
+    public static Message receive() throws Exception 
     {
 	QueueingConsumer.Delivery delivery = consumer.nextDelivery();
-	logger.log(Level.INFO, "Receive message \""+new String(delivery.getBody())+"\" from queue \""+myQueueName+"\"");
-	return new String(delivery.getBody());
+	logger.log(Level.INFO, "Receive message \""+new String(delivery.getBody())+"\"");
+	return new Message(new String(delivery.getBody()));
     }
 
     public static void close() throws Exception 

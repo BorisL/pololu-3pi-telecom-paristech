@@ -12,12 +12,12 @@ public class Client {
 	
 	Controler.init(argv[0],argv[1]);
 
-	Controler.send("Salut!","pololu");
+	Controler.send(new Message(argv[1],"pololu",Message.Type.TEXT, "Hello!"));
 
 	Controler.receive();
 	
-	Controler.log(Level.INFO, "After receive");
+	
 	Controler.close();	
-	Controler.log(Level.INFO, "After close");
+	
     }
 }

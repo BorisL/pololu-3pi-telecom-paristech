@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2012-03-03T01:39:01</date>
-  <millis>1330735141555</millis>
+  <date>2012-03-03T02:48:37</date>
+  <millis>1330739317808</millis>
   <sequence>1</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -13,8 +13,8 @@
   <message>Console handler initialized</message>
 </record>
 <record>
-  <date>2012-03-03T01:39:01</date>
-  <millis>1330735141706</millis>
+  <date>2012-03-03T02:48:38</date>
+  <millis>1330739318039</millis>
   <sequence>2</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -24,30 +24,30 @@
   <message>RabbitMQ queue initialized</message>
 </record>
 <record>
-  <date>2012-03-03T01:39:01</date>
-  <millis>1330735141707</millis>
+  <date>2012-03-03T02:48:38</date>
+  <millis>1330739318041</millis>
   <sequence>3</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "Salut!" to queue "pololu"</message>
+  <message>Send message "Boris4;pololu;TEXT;Hello!"</message>
 </record>
 <record>
-  <date>2012-03-03T01:39:01</date>
-  <millis>1330735141712</millis>
+  <date>2012-03-03T02:48:43</date>
+  <millis>1330739323803</millis>
   <sequence>4</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Recieve message "[B@16fe0f4" from queue "Boris"</message>
+  <message>Receive message "pololu;Boris4;TEXT;J'ai bien recu!"</message>
 </record>
 <record>
-  <date>2012-03-03T01:39:01</date>
-  <millis>1330735141713</millis>
+  <date>2012-03-03T02:48:43</date>
+  <millis>1330739323804</millis>
   <sequence>5</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -57,8 +57,8 @@
   <message>After receive</message>
 </record>
 <record>
-  <date>2012-03-03T01:39:01</date>
-  <millis>1330735141720</millis>
+  <date>2012-03-03T02:48:43</date>
+  <millis>1330739323814</millis>
   <sequence>6</sequence>
   <logger>logger</logger>
   <level>INFO</level>
