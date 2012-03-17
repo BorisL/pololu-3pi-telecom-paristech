@@ -1,6 +1,7 @@
 import java.util.logging.Level;
 
-public class Server {
+public class Server 
+{
 
     public static void main(String[] argv) throws Exception 
     {
@@ -9,14 +10,24 @@ public class Server {
 		System.out.println("Use: Server AMQPServerAdress ControlerName");
 		System.exit(1);
 	    }
-	Controler.init(argv[0],argv[1]);
+	Controler controler = new Controler();
+	controler.init(argv[0],argv[1]);
 	while (true) {
 	    Controler.log(Level.INFO, "Waiting message from queue ...");
-	    Message m = Controler.receive();
-	    Controler.send(m.reply("J'ai bien recu!"));
+	    Message m = controler.receive();
+	    if(m.getType().equals(Message.Type.ADD))
+		{
+		    
+		    Robot robot = new Robot(argv[0],m.getBody());
+		    Thread thread = new Thread(robot);
+		    thread.start();
+		    controler.send(m.reply("OK"));  
+
+		}
+	    else 
+		{controler.send(m.reply("UNKNOWN"));}
+	    
 	}
-    }
-
-   
-
+    }  
 }
+

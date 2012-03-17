@@ -10,14 +10,14 @@ import java.util.logging.FileHandler;
 
 public class Controler {
 
-    private static Connection connection;
-    private static Channel channel;
-    private static QueueingConsumer consumer;
+    private Connection connection;
+    private Channel channel;
+    private QueueingConsumer consumer;
     private static Logger logger;
     private static FileHandler ch;
-    private static String myQueueName;
+    private String myQueueName;
 
-    public static void init(String AMQPServerAdress, String controlerName) throws Exception 
+    public void init(String AMQPServerAdress, String controlerName) throws Exception 
     {
 	// init logger
 	logger = Logger.getLogger("logger");
@@ -55,20 +55,20 @@ public class Controler {
 	logger.log(level, message);
     }
 
-    public static void send(Message m) throws Exception 
+    public void send(Message m) throws Exception 
     {
 	logger.log(Level.INFO, "Send message \""+m.getMessage()+"\"");
 	channel.basicPublish("", m.getTo(), null, m.getMessage().getBytes());
     }
 
-    public static Message receive() throws Exception 
+    public Message receive() throws Exception 
     {
 	QueueingConsumer.Delivery delivery = consumer.nextDelivery();
 	logger.log(Level.INFO, "Receive message \""+new String(delivery.getBody())+"\"");
 	return new Message(new String(delivery.getBody()));
     }
 
-    public static void close() throws Exception 
+    public void close() throws Exception 
     {
 	channel.close();
 	connection.close();

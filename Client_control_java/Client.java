@@ -9,15 +9,22 @@ public class Client {
 		System.out.println("Use: Client AMQPServerAdress ControlerName");
 		System.exit(1);
 	    }
-	
-	Controler.init(argv[0],argv[1]);
+	Controler controler = new Controler();
+	controler.init(argv[0],argv[1]);
 
-	Controler.send(new Message(argv[1],"pololu",Message.Type.TEXT, "Hello!"));
+	controler.send(new Message(argv[1],"pololu",Message.Type.TEXT, "Hello!"));
+	controler.receive();
+	
+	controler.send(new Message(argv[1],"pololu",Message.Type.ADD, "Toto"));
+	controler.receive();
 
-	Controler.receive();
+	controler.send(new Message(argv[1],"Toto",Message.Type.TEXT, "Coucou..."));
+	controler.receive();
 	
-	
-	Controler.close();	
+	controler.send(new Message(argv[1],"Toto",Message.Type.GOSTRAIGHT, "Coucou..."));
+		controler.receive();
+
+	controler.close();	
 	
     }
 }

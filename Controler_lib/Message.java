@@ -1,7 +1,7 @@
 class Message
 {
     
-    public enum Type {TEXT, MUSIC, GOSTRAIGHT, TURNLEFT, TURNRIGHT, UNKNOWN};
+    public enum Type {ADD, TEXT, MUSIC, GOSTRAIGHT, TURNLEFT, TURNRIGHT, UNKNOWN};
 
     private String to;
     private String from;
@@ -17,6 +17,8 @@ class Message
 	type = _type;
 	body = _body;
     }
+
+    public Message() {}
 
     public Message(String _from, String _to, Type _type, String _body)
     {
@@ -49,6 +51,7 @@ class Message
     {
 	switch(_type)
 	    {
+	    case ADD: return "ADD";
 	    case TEXT: return "TEXT";
 	    case MUSIC: return "MUSIC";
 	    case GOSTRAIGHT: return "GOSTRAIGHT";
@@ -60,6 +63,7 @@ class Message
 
     public static Type stringToType(String _type)
     {
+	if(_type.equals("ADD")) return Type.ADD;
 	if(_type.equals("TEXT")) return Type.TEXT;
 	if(_type.equals("MUSIC")) return Type.MUSIC;
 	if(_type.equals("GOSTRAIGHT")) return Type.GOSTRAIGHT;
