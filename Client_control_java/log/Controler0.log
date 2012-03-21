@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2012-03-17T23:25:25</date>
-  <millis>1332023125237</millis>
+  <date>2012-03-17T23:39:01</date>
+  <millis>1332023941834</millis>
   <sequence>1</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -13,8 +13,8 @@
   <message>Console handler initialized</message>
 </record>
 <record>
-  <date>2012-03-17T23:25:25</date>
-  <millis>1332023125388</millis>
+  <date>2012-03-17T23:39:01</date>
+  <millis>1332023941979</millis>
   <sequence>2</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -24,8 +24,8 @@
   <message>RabbitMQ queue initialized</message>
 </record>
 <record>
-  <date>2012-03-17T23:25:25</date>
-  <millis>1332023125390</millis>
+  <date>2012-03-17T23:39:01</date>
+  <millis>1332023941980</millis>
   <sequence>3</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -35,19 +35,19 @@
   <message>Send message "Boris;pololu;TEXT;Hello!"</message>
 </record>
 <record>
-  <date>2012-03-17T23:25:25</date>
-  <millis>1332023125395</millis>
+  <date>2012-03-17T23:39:02</date>
+  <millis>1332023942096</millis>
   <sequence>4</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "Toto;Boris;GOSTRAIGHT;UNKNOWN"</message>
+  <message>Receive message "pololu;Boris;TEXT;UNKNOWN"</message>
 </record>
 <record>
-  <date>2012-03-17T23:25:25</date>
-  <millis>1332023125396</millis>
+  <date>2012-03-17T23:39:02</date>
+  <millis>1332023942097</millis>
   <sequence>5</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -57,19 +57,19 @@
   <message>Send message "Boris;pololu;ADD;Toto"</message>
 </record>
 <record>
-  <date>2012-03-17T23:25:25</date>
-  <millis>1332023125402</millis>
+  <date>2012-03-17T23:39:02</date>
+  <millis>1332023942117</millis>
   <sequence>6</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "pololu;Boris;TEXT;UNKNOWN"</message>
+  <message>Receive message "pololu;Boris;ADD;OK"</message>
 </record>
 <record>
-  <date>2012-03-17T23:25:25</date>
-  <millis>1332023125403</millis>
+  <date>2012-03-17T23:39:02</date>
+  <millis>1332023942118</millis>
   <sequence>7</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -79,8 +79,8 @@
   <message>Send message "Boris;Toto;TEXT;Coucou..."</message>
 </record>
 <record>
-  <date>2012-03-17T23:25:25</date>
-  <millis>1332023125410</millis>
+  <date>2012-03-17T23:39:02</date>
+  <millis>1332023942124</millis>
   <sequence>8</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -90,8 +90,8 @@
   <message>Receive message "Toto;Boris;TEXT;OK"</message>
 </record>
 <record>
-  <date>2012-03-17T23:25:25</date>
-  <millis>1332023125411</millis>
+  <date>2012-03-17T23:39:02</date>
+  <millis>1332023942125</millis>
   <sequence>9</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -101,14 +101,14 @@
   <message>Send message "Boris;Toto;GOSTRAIGHT;Coucou..."</message>
 </record>
 <record>
-  <date>2012-03-17T23:25:25</date>
-  <millis>1332023125417</millis>
+  <date>2012-03-17T23:39:16</date>
+  <millis>1332023956886</millis>
   <sequence>10</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "pololu;Boris;ADD;OK"</message>
+  <message>Receive message "Toto;Boris;GOSTRAIGHT;UNKNOWN"</message>
 </record>
 </log>

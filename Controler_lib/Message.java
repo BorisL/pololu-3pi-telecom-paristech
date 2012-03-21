@@ -1,7 +1,7 @@
 class Message
 {
     
-    public enum Type {ADD, TEXT, MUSIC, GOSTRAIGHT, TURNLEFT, TURNRIGHT, UNKNOWN};
+    public enum Type {ADD, TEXT, MUSIC, GOSTRAIGHT, TURNLEFT, TURNRIGHT, ACK, ERROR, UNKNOWN};
 
     private String to;
     private String from;
@@ -57,6 +57,8 @@ class Message
 	    case GOSTRAIGHT: return "GOSTRAIGHT";
 	    case TURNLEFT: return "TURNLEFT";
 	    case TURNRIGHT: return "TURNRIGHT";
+	    case ACK: return "ACK";
+	    case ERROR: return "ERROR";
 	    default: return "UNKNOWN";
 	    }
     }
@@ -69,6 +71,8 @@ class Message
 	if(_type.equals("GOSTRAIGHT")) return Type.GOSTRAIGHT;
 	if(_type.equals("TURNLEFT")) return Type.TURNLEFT;
 	if(_type.equals("TURNRIGHT")) return Type.TURNRIGHT;
+	if(_type.equals("ACK")) return Type.ACK;
+	if(_type.equals("ERROR")) return Type.ERROR;
 	return Type.UNKNOWN;	    
     }
     
@@ -76,6 +80,16 @@ class Message
     public Message reply(String _body)
     {
 	return new Message(to,from,type,_body);
+    }
+
+    public Message reply_success(String _body)
+    {
+	return new Message(to,from,Type.ACK,_body);
+    }
+
+    public Message reply_error(String _body)
+    {
+	return new Message(to,from,Type.ERROR,_body);
     }
 
 }

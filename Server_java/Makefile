@@ -1,4 +1,4 @@
-JC = javac
+JC = javac -Xlint:unchecked
 
 CONTROLER = ../Controler_lib/Controler.jar:.
 
