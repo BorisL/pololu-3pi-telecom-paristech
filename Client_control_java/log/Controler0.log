@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2012-03-17T23:39:01</date>
-  <millis>1332023941834</millis>
+  <date>2012-03-27T19:08:44</date>
+  <millis>1332868124653</millis>
   <sequence>1</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -13,8 +13,8 @@
   <message>Console handler initialized</message>
 </record>
 <record>
-  <date>2012-03-17T23:39:01</date>
-  <millis>1332023941979</millis>
+  <date>2012-03-27T19:08:44</date>
+  <millis>1332868124800</millis>
   <sequence>2</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -24,9 +24,20 @@
   <message>RabbitMQ queue initialized</message>
 </record>
 <record>
-  <date>2012-03-17T23:39:01</date>
-  <millis>1332023941980</millis>
+  <date>2012-03-27T19:08:44</date>
+  <millis>1332868124801</millis>
   <sequence>3</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>purge</method>
+  <thread>10</thread>
+  <message>Purge the queue Boris</message>
+</record>
+<record>
+  <date>2012-03-27T19:08:44</date>
+  <millis>1332868124804</millis>
+  <sequence>4</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
@@ -35,9 +46,9 @@
   <message>Send message "Boris;pololu;TEXT;Hello!"</message>
 </record>
 <record>
-  <date>2012-03-17T23:39:02</date>
-  <millis>1332023942096</millis>
-  <sequence>4</sequence>
+  <date>2012-03-27T19:08:44</date>
+  <millis>1332868124828</millis>
+  <sequence>5</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
@@ -46,9 +57,9 @@
   <message>Receive message "pololu;Boris;TEXT;UNKNOWN"</message>
 </record>
 <record>
-  <date>2012-03-17T23:39:02</date>
-  <millis>1332023942097</millis>
-  <sequence>5</sequence>
+  <date>2012-03-27T19:08:44</date>
+  <millis>1332868124829</millis>
+  <sequence>6</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
@@ -57,9 +68,9 @@
   <message>Send message "Boris;pololu;ADD;Toto"</message>
 </record>
 <record>
-  <date>2012-03-17T23:39:02</date>
-  <millis>1332023942117</millis>
-  <sequence>6</sequence>
+  <date>2012-03-27T19:08:44</date>
+  <millis>1332868124850</millis>
+  <sequence>7</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
@@ -68,9 +79,9 @@
   <message>Receive message "pololu;Boris;ADD;OK"</message>
 </record>
 <record>
-  <date>2012-03-17T23:39:02</date>
-  <millis>1332023942118</millis>
-  <sequence>7</sequence>
+  <date>2012-03-27T19:08:44</date>
+  <millis>1332868124851</millis>
+  <sequence>8</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
@@ -79,20 +90,20 @@
   <message>Send message "Boris;Toto;TEXT;Coucou..."</message>
 </record>
 <record>
-  <date>2012-03-17T23:39:02</date>
-  <millis>1332023942124</millis>
-  <sequence>8</sequence>
+  <date>2012-03-27T19:08:44</date>
+  <millis>1332868124857</millis>
+  <sequence>9</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "Toto;Boris;TEXT;OK"</message>
+  <message>Receive message "Toto;Boris;ACK;Text sent"</message>
 </record>
 <record>
-  <date>2012-03-17T23:39:02</date>
-  <millis>1332023942125</millis>
-  <sequence>9</sequence>
+  <date>2012-03-27T19:08:44</date>
+  <millis>1332868124858</millis>
+  <sequence>10</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
@@ -101,14 +112,14 @@
   <message>Send message "Boris;Toto;GOSTRAIGHT;Coucou..."</message>
 </record>
 <record>
-  <date>2012-03-17T23:39:16</date>
-  <millis>1332023956886</millis>
-  <sequence>10</sequence>
+  <date>2012-03-27T19:08:49</date>
+  <millis>1332868129876</millis>
+  <sequence>11</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "Toto;Boris;GOSTRAIGHT;UNKNOWN"</message>
+  <message>Receive message "Toto;Boris;ACK;Order sent"</message>
 </record>
 </log>

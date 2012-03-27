@@ -14,4 +14,4 @@ order:
 	$(JC) -classpath $(CONTROLER) Order.java
 
 clean:
-	rm Server.class
+	rm *.class *~

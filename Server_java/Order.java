@@ -23,7 +23,7 @@ public class Order extends Thread
 
     public void finish() {stop = true;}
 
-    public void start()
+    public void run()
     {
 	Controler.log(Level.INFO, "start order");
 	try
@@ -39,14 +39,12 @@ public class Order extends Thread
 			// timeout
 			Controler.log(Level.INFO, "Timeout reached");
 		
-			controler.send(m_client.reply("FAILED"));
+			controler.send(m_client.reply("Order timeout"));
 		    }
 		else 
 		    {
 			// receive ack from pololu
-			Controler.log(Level.INFO, "Ack received");
-		
-			controler.send(m_client.reply("OK"));
+			Controler.log(Level.INFO, "Message received from pololu");
 		    }
 		// don't forget to remove the order from robot's list
 		r.orders.remove(ID);

@@ -12,16 +12,18 @@ public class Server
 	    }
 	Controler controler = new Controler();
 	controler.init(argv[0],argv[1]);
-	while (true) {
-	    Controler.log(Level.INFO, "Waiting message from queue ...");
-	    Message m = controler.receive();
-	    if(m.getType().equals(Message.Type.ADD))
-		{
+	while (true) 
+	    {
+		Controler.log(Level.INFO, "Waiting message from queue ...");
+		Message m = controler.receive();
+		if(m.getType().equals(Message.Type.ADD))
+		    {
 		    
-		    Robot robot = new Robot(argv[0],m.getBody());
-		    Thread thread = new Thread(robot);
-		    thread.start();
-		    controler.send(m.reply("OK"));  
+			// TODO define zigbee server location
+			Robot robot = new Robot(argv[0],m.getBody(),"zigbee");
+			Thread thread = new Thread(robot);
+			thread.start();
+			controler.send(m.reply("OK"));  
 
 		}
 	    else 

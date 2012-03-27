@@ -41,6 +41,9 @@ public class Controler {
 	channel.basicConsume(controlerName, true, consumer);
 
 	logger.log(Level.INFO, "RabbitMQ queue initialized");
+
+	
+
     	   
     }
 
@@ -66,6 +69,12 @@ public class Controler {
 	QueueingConsumer.Delivery delivery = consumer.nextDelivery();
 	logger.log(Level.INFO, "Receive message \""+new String(delivery.getBody())+"\"");
 	return new Message(new String(delivery.getBody()));
+    }
+
+    public void purge()throws Exception
+    {// TODO verify the execution of queuePurge
+	logger.log(Level.INFO, "Purge the queue "+myQueueName);
+	channel.queuePurge(myQueueName);
     }
 
     public void close() throws Exception 

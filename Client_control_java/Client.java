@@ -12,6 +12,8 @@ public class Client {
 	Controler controler = new Controler();
 	controler.init(argv[0],argv[1]);
 
+	controler.purge();
+	   
 	controler.send(new Message(argv[1],"pololu",Message.Type.TEXT, "Hello!"));
 	controler.receive();
 	

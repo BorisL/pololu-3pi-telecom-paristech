@@ -3,16 +3,21 @@ import java.util.HashMap;
 
 public class Robot implements Runnable
 {
+ 
     String queueName;
     String zigbeeGateway;
     Controler controler;
     Boolean isDoing;
     HashMap<Integer,Order> orders;
-    public Robot(String AMQPServer, String _queueName) throws Exception
+    HashMap<Integer,Message> messages;
+    
+    public Robot(String AMQPServer, String _queueName, String _zigbeeGateway) throws Exception
     {
 	Controler.log(Level.INFO, queueName+" init");
 	queueName = _queueName;
+	zigbeeGateway = _zigbeeGateway;
 	orders = new HashMap<Integer,Order>();
+	messages = new HashMap<Integer,Message>();
 	controler = new Controler();
 	controler.init(AMQPServer, queueName);
     }
@@ -35,27 +40,36 @@ public class Robot implements Runnable
 				controler.send(m.reply_success("Music played"));
 				break;
 			    case GOSTRAIGHT: 
-				Order o1 = new Order(controler,this,m);
-				orders.put(o1.ID,o1);
-				o1.start();
-				break;
 			    case TURNLEFT: 
-				Order o2 = new Order(controler,this,m);
-				orders.put(o2.ID,o2);
-				o2.start();
-				break;
 			    case TURNRIGHT: 
-				Order o3 = new Order(controler,this,m);
-				orders.put(o3.ID,o3);
-				o3.start();
+				Order o = new Order(controler,this,m);
+				orders.put(o.ID,o);
+				messages.put(o.ID,m);
+				
+				Message _m = new Message(queueName, zigbeeGateway, m.getType(), o.ID.toString());
+				controler.send(_m);
+				o.start();
+				
 				break;
+			    
 			    case ACK:
-				//new Integer(m.getBody());
-				controler.send(m.reply_success("Order sent"));
-				break;
 			    case ERROR:
-				controler.send(m.reply_error("Order failed"));
-				break;
+				Integer id = new Integer(m.getBody());
+				if(orders.containsKey(id))
+				    {
+				Message m_r = messages.get(id);
+				
+				if(m.getType().equals(Message.Type.ACK))
+				    controler.send(m_r.reply_success("Order sent"));
+				else
+				    controler.send(m_r.reply_error("Order error"));
+				orders.get(id).finish();
+				orders.remove(id);
+				messages.remove(id);
+				    }
+				else //the order already reach the timeout
+				    {/* nothing to do */}
+			break;
 			    default: 
 				controler.send(m.reply("UNKNOWN"));
 			    }
