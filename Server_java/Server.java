@@ -20,7 +20,7 @@ public class Server
 		    {
 		    
 			// TODO define zigbee server location
-			Robot robot = new Robot(argv[0],m.getBody(),"zigbee");
+			Robot robot = new Robot(argv[0],m.getBody(),"XBee");
 			Thread thread = new Thread(robot);
 			thread.start();
 			controler.send(m.reply("OK"));  

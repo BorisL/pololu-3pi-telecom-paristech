@@ -1,7 +1,3 @@
 #!/bin/bash
-#run the zigbee server
-echo -- start server --
-export RABBITMQ_PATH=../../RabbitMQ-java
-export CONTROLER=../Controler_lib
-export CP=.:$RABBITMQ_PATH/commons-io-1.2.jar:$RABBITMQ_PATH/commons-cli-1.1.jar:$RABBITMQ_PATH/rabbitmq-client.jar:$CONTROLER/Controler.jar
-java -cp $CP Zigbee localhost zigbee
+#run the XBee server
+python XBee_com.py localhost XBee

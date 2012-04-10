@@ -35,9 +35,13 @@ public class Robot implements Runnable
 			    {
 			    case TEXT: 
 				controler.send(m.reply_success("Text sent"));
+				Message _m_t = new Message(queueName, zigbeeGateway, m.getType(), m.getBody());
+				controler.send(_m_t);
 				break;
 			    case MUSIC:
 				controler.send(m.reply_success("Music played"));
+				Message _m_m = new Message(queueName, zigbeeGateway, m.getType(), m.getBody());
+				controler.send(_m_m);
 				break;
 			    case GOSTRAIGHT: 
 			    case TURNLEFT: 

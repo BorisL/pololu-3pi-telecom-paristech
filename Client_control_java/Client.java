@@ -14,16 +14,16 @@ public class Client {
 
 	controler.purge();
 	   
-	controler.send(new Message(argv[1],"pololu",Message.Type.TEXT, "Hello!"));
+	controler.send(new Message(argv[1],"Controler",Message.Type.TEXT, "Hello!"));
 	controler.receive();
 	
-	controler.send(new Message(argv[1],"pololu",Message.Type.ADD, "Toto"));
+	controler.send(new Message(argv[1],"Controler",Message.Type.ADD, "Pololu"));
 	controler.receive();
 
-	controler.send(new Message(argv[1],"Toto",Message.Type.TEXT, "Coucou..."));
+	controler.send(new Message(argv[1],"Pololu",Message.Type.TEXT, "Coucou..."));
 	controler.receive();
 	
-	controler.send(new Message(argv[1],"Toto",Message.Type.GOSTRAIGHT, "Coucou..."));
+	controler.send(new Message(argv[1],"Pololu",Message.Type.GOSTRAIGHT, "Coucou..."));
 		controler.receive();
 
 	controler.close();	

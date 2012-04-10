@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2012-03-27T19:08:44</date>
-  <millis>1332868124653</millis>
+  <date>2012-04-10T23:34:02</date>
+  <millis>1334093642017</millis>
   <sequence>1</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -13,8 +13,8 @@
   <message>Console handler initialized</message>
 </record>
 <record>
-  <date>2012-03-27T19:08:44</date>
-  <millis>1332868124800</millis>
+  <date>2012-04-10T23:34:02</date>
+  <millis>1334093642171</millis>
   <sequence>2</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -24,8 +24,8 @@
   <message>RabbitMQ queue initialized</message>
 </record>
 <record>
-  <date>2012-03-27T19:08:44</date>
-  <millis>1332868124801</millis>
+  <date>2012-04-10T23:34:02</date>
+  <millis>1334093642171</millis>
   <sequence>3</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -35,91 +35,91 @@
   <message>Purge the queue Boris</message>
 </record>
 <record>
-  <date>2012-03-27T19:08:44</date>
-  <millis>1332868124804</millis>
+  <date>2012-04-10T23:34:02</date>
+  <millis>1334093642174</millis>
   <sequence>4</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "Boris;pololu;TEXT;Hello!"</message>
+  <message>Send message "Boris;Controler;TEXT;Hello!"</message>
 </record>
 <record>
-  <date>2012-03-27T19:08:44</date>
-  <millis>1332868124828</millis>
+  <date>2012-04-10T23:34:02</date>
+  <millis>1334093642184</millis>
   <sequence>5</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "pololu;Boris;TEXT;UNKNOWN"</message>
+  <message>Receive message "Controler;Boris;TEXT;UNKNOWN"</message>
 </record>
 <record>
-  <date>2012-03-27T19:08:44</date>
-  <millis>1332868124829</millis>
+  <date>2012-04-10T23:34:02</date>
+  <millis>1334093642185</millis>
   <sequence>6</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "Boris;pololu;ADD;Toto"</message>
+  <message>Send message "Boris;Controler;ADD;Pololu"</message>
 </record>
 <record>
-  <date>2012-03-27T19:08:44</date>
-  <millis>1332868124850</millis>
+  <date>2012-04-10T23:34:02</date>
+  <millis>1334093642200</millis>
   <sequence>7</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "pololu;Boris;ADD;OK"</message>
+  <message>Receive message "Controler;Boris;ADD;OK"</message>
 </record>
 <record>
-  <date>2012-03-27T19:08:44</date>
-  <millis>1332868124851</millis>
+  <date>2012-04-10T23:34:02</date>
+  <millis>1334093642201</millis>
   <sequence>8</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "Boris;Toto;TEXT;Coucou..."</message>
+  <message>Send message "Boris;Pololu;TEXT;Coucou..."</message>
 </record>
 <record>
-  <date>2012-03-27T19:08:44</date>
-  <millis>1332868124857</millis>
+  <date>2012-04-10T23:34:02</date>
+  <millis>1334093642209</millis>
   <sequence>9</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "Toto;Boris;ACK;Text sent"</message>
+  <message>Receive message "Pololu;Boris;ACK;Text sent"</message>
 </record>
 <record>
-  <date>2012-03-27T19:08:44</date>
-  <millis>1332868124858</millis>
+  <date>2012-04-10T23:34:02</date>
+  <millis>1334093642210</millis>
   <sequence>10</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "Boris;Toto;GOSTRAIGHT;Coucou..."</message>
+  <message>Send message "Boris;Pololu;GOSTRAIGHT;Coucou..."</message>
 </record>
 <record>
-  <date>2012-03-27T19:08:49</date>
-  <millis>1332868129876</millis>
+  <date>2012-04-10T23:34:13</date>
+  <millis>1334093653430</millis>
   <sequence>11</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "Toto;Boris;ACK;Order sent"</message>
+  <message>Receive message "Pololu;Boris;GOSTRAIGHT;Order timeout"</message>
 </record>
 </log>
