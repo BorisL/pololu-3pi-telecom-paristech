@@ -2,7 +2,7 @@ import java.util.logging.Level;
 
 public class Order extends Thread
 {
-    static Integer nextID=0;
+    static Integer nextID = 0;
     Integer ID;
     Integer timeout;
     Message m_client;
@@ -12,9 +12,10 @@ public class Order extends Thread
 
     public Order(Controler _c, Robot _r, Message _m)
     {
+	
 	ID = nextID;
 	nextID++;
-	timeout = 10000;
+	timeout = 15000;
 	controler = _c;
 	m_client = _m;
 	r = _r;
@@ -22,6 +23,11 @@ public class Order extends Thread
     }
 
     public void finish() {stop = true;}
+
+    public String toString()
+    {
+	return ID+ "->" + m_client;
+    }
 
     public void run()
     {
@@ -38,19 +44,21 @@ public class Order extends Thread
 		    {
 			// timeout
 			Controler.log(Level.INFO, "Timeout reached");
-		
-			controler.send(m_client.reply("Order timeout"));
+			r.orders.remove(ID);
+			r.messages.remove(ID);
+			m_client.reply_error(3);
+			controler.send(m_client);
 		    }
 		else 
 		    {
 			// receive ack from pololu
 			Controler.log(Level.INFO, "Message received from pololu");
 		    }
-		// don't forget to remove the order from robot's list
-		r.orders.remove(ID);
+		
+		Controler.log(Level.INFO, "finish order");	
 	    }
 	catch(Exception e)
-	    {}
+	    {Controler.log(Level.SEVERE, "order error");}
     }
 
 }

@@ -7,6 +7,8 @@ import com.rabbitmq.client.QueueingConsumer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.FileHandler;
+//others import
+import java.util.HashMap;
 
 public class Controler {
 
@@ -16,9 +18,11 @@ public class Controler {
     private static Logger logger;
     private static FileHandler ch;
     private String myQueueName;
+    private String XbeeGateway;
 
     public void init(String AMQPServerAdress, String controlerName) throws Exception 
     {
+	
 	// init logger
 	logger = Logger.getLogger("logger");
 	logger.setLevel(Level.ALL);
@@ -40,11 +44,13 @@ public class Controler {
 	consumer = new QueueingConsumer(channel);
 	channel.basicConsume(controlerName, true, consumer);
 
-	logger.log(Level.INFO, "RabbitMQ queue initialized");
+	logger.log(Level.INFO, "RabbitMQ queue initialized");  	   
+    }
 
-	
-
-    	   
+    public void putXbeeGateway(String Xbee)
+    {
+	logger.log(Level.INFO, "Add robot with XBee "+Xbee);
+	XbeeGateway = Xbee;
     }
 
     public static void setLogLevel(Level level)
@@ -62,6 +68,12 @@ public class Controler {
     {
 	logger.log(Level.INFO, "Send message \""+m.getMessage()+"\"");
 	channel.basicPublish("", m.getTo(), null, m.getMessage().getBytes());
+    }
+
+    public void sendXbee(Message m) throws Exception 
+    {
+	logger.log(Level.INFO, "Send to Xbee message \""+m.getMessage()+"\" using gateway "+XbeeGateway);
+	channel.basicPublish("", XbeeGateway, null, m.getMessage().getBytes());
     }
 
     public Message receive() throws Exception 

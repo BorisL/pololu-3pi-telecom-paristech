@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2012-04-10T23:34:02</date>
-  <millis>1334093642017</millis>
+  <date>2012-04-17T22:37:51</date>
+  <millis>1334695071688</millis>
   <sequence>1</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -13,8 +13,8 @@
   <message>Console handler initialized</message>
 </record>
 <record>
-  <date>2012-04-10T23:34:02</date>
-  <millis>1334093642171</millis>
+  <date>2012-04-17T22:37:51</date>
+  <millis>1334695071842</millis>
   <sequence>2</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -24,8 +24,8 @@
   <message>RabbitMQ queue initialized</message>
 </record>
 <record>
-  <date>2012-04-10T23:34:02</date>
-  <millis>1334093642171</millis>
+  <date>2012-04-17T22:37:51</date>
+  <millis>1334695071842</millis>
   <sequence>3</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -35,91 +35,134 @@
   <message>Purge the queue Boris</message>
 </record>
 <record>
-  <date>2012-04-10T23:34:02</date>
-  <millis>1334093642174</millis>
+  <date>2012-04-17T22:37:51</date>
+  <millis>1334695071845</millis>
   <sequence>4</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "Boris;Controler;TEXT;Hello!"</message>
+  <message>Send message "-1;Boris;Controler;ADD;Pololu;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-04-10T23:34:02</date>
-  <millis>1334093642184</millis>
+  <date>2012-04-17T22:37:51</date>
+  <millis>1334695071880</millis>
   <sequence>5</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "Controler;Boris;TEXT;UNKNOWN"</message>
+  <message>Receive message "-1;Controler;Boris;ADD;Pololu;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-04-10T23:34:02</date>
-  <millis>1334093642185</millis>
+  <date>2012-04-17T22:37:55</date>
+  <millis>1334695075406</millis>
   <sequence>6</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "Boris;Controler;ADD;Pololu"</message>
+  <message>Send message "-1;Boris;Pololu;TEXT;Coucou;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-04-10T23:34:02</date>
-  <millis>1334093642200</millis>
+  <date>2012-04-17T22:37:55</date>
+  <millis>1334695075589</millis>
   <sequence>7</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "Controler;Boris;ADD;OK"</message>
+  <message>Receive message "0;Pololu;Boris;TEXT;Coucou;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-04-10T23:34:02</date>
-  <millis>1334093642201</millis>
+  <date>2012-04-17T22:37:58</date>
+  <millis>1334695078078</millis>
   <sequence>8</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "Boris;Pololu;TEXT;Coucou..."</message>
+  <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-04-10T23:34:02</date>
-  <millis>1334093642209</millis>
+  <date>2012-04-17T22:37:58</date>
+  <millis>1334695078247</millis>
   <sequence>9</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "Pololu;Boris;ACK;Text sent"</message>
+  <message>Receive message "1;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-04-10T23:34:02</date>
-  <millis>1334093642210</millis>
+  <date>2012-04-17T22:37:59</date>
+  <millis>1334695079742</millis>
   <sequence>10</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "Boris;Pololu;GOSTRAIGHT;Coucou..."</message>
+  <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-04-10T23:34:13</date>
-  <millis>1334093653430</millis>
+  <date>2012-04-17T22:37:59</date>
+  <millis>1334695079903</millis>
   <sequence>11</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "Pololu;Boris;GOSTRAIGHT;Order timeout"</message>
+  <message>Receive message "2;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
 </record>
-</log>
+<record>
+  <date>2012-04-17T22:38:00</date>
+  <millis>1334695080845</millis>
+  <sequence>12</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "-1;Boris;Pololu;TURNRIGHT;;SUBMIT;0"</message>
+</record>
+<record>
+  <date>2012-04-17T22:38:01</date>
+  <millis>1334695081009</millis>
+  <sequence>13</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>10</thread>
+  <message>Receive message "3;Pololu;Boris;TURNRIGHT;;SUCCESS;0"</message>
+</record>
+<record>
+  <date>2012-04-17T22:38:01</date>
+  <millis>1334695081950</millis>
+  <sequence>14</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "-1;Boris;Pololu;MUSIC;L4 V8 MS G G G E-6 B-12 G E-6 B-12 G2 &gt;D &gt;D &gt;D &gt;E-6 B-12 F# E-6 B-12 G2;SUBMIT;0"</message>
+</record>
+<record>
+  <date>2012-04-17T22:38:02</date>
+  <millis>1334695082397</millis>
+  <sequence>15</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>10</thread>
+  <message>Receive message "4;Pololu;Boris;MUSIC;L4 V8 MS G G G E-6 B-12 G E-6 B-12 G2 &gt;D &gt;D &gt;D &gt;E-6 B-12 F# E-6 B-12 G2;SUCCESS;0"</message>
+</record>

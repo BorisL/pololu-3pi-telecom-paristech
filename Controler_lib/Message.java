@@ -2,41 +2,59 @@ class Message
 {
     
     public enum Type {ADD, TEXT, MUSIC, GOSTRAIGHT, TURNLEFT, TURNRIGHT, ACK, ERROR, UNKNOWN};
+    public enum State {SUBMIT, SUCCESS, ERROR, UNKNOWN};
 
+    private Integer id;
     private String to;
     private String from;
-    private String body;
     private Type type;
+    private String body;
+    private State state;
+    private Integer errno;
     
     static private String SEPARATOR = ";";
 
-    public void buildMessage(String _from, String _to, Type _type, String _body)
+    public void buildMessage(Integer _id, String _from, String _to, Type _type, String _body, State _state, Integer _errno)
     {
+	id = _id;
 	to = _to;
 	from = _from;
 	type = _type;
 	body = _body;
+	state = _state;
+	errno = _errno;
     }
 
     public Message() {}
 
     public Message(String _from, String _to, Type _type, String _body)
     {
-	buildMessage(_from,_to,_type,_body);
+	buildMessage(-1, _from,_to,_type,_body, State.SUBMIT, 0);
     }
 
     public Message(String message_s)
     {
 	String [] tmp = message_s.split(SEPARATOR);
-	buildMessage(tmp[0],tmp[1],stringToType(tmp[2]),tmp[3]);
+	buildMessage(
+		     new Integer(tmp[0]), // id
+		     tmp[1], // from
+		     tmp[2], // to
+		     stringToType(tmp[3]), // type
+		     tmp[4], // body
+		     stringToState(tmp[5]), // state
+		     new Integer(tmp[6])  // errno
+		     );
     }
 
     public String getMessage()
     {
-	return getFrom()+SEPARATOR
+	return getId()+SEPARATOR
+	    +getFrom()+SEPARATOR
 	    +getTo()+SEPARATOR
 	    +getType()+SEPARATOR
-	    +getBody();
+	    +getBody()+SEPARATOR
+	    +getState()+SEPARATOR
+	    +getErrno();
     }
 
     public String getTo() {return to;}
@@ -46,6 +64,22 @@ class Message
     public String getBody() {return body;}
 
     public Type getType() {return type;}
+
+    public State getState() {return state;}
+
+    public Integer getErrno() {return errno;}
+
+    public Integer getId() {return id;}
+
+    public void setState(State _state) {state = _state;}
+
+    public void setErrno(Integer _errno) {errno = _errno;}
+
+    public void setId(Integer _id) {id = _id;}
+
+    public void setFrom(String _from) {from = _from;}
+
+    public void setTo(String _to) {to = _to;}
 
     public static String typeToString(Type _type)
     {
@@ -75,21 +109,41 @@ class Message
 	if(_type.equals("ERROR")) return Type.ERROR;
 	return Type.UNKNOWN;	    
     }
-    
 
-    public Message reply(String _body)
+    public static String stateToString(State _state)
     {
-	return new Message(to,from,type,_body);
+	switch(_state)
+	    {
+	    case SUBMIT: return "SUBMI";
+	    case SUCCESS: return "SUCCESS";
+	    case ERROR: return "ERROR"; 
+	    default: return "UNKNOWN";
+	    }
     }
 
-    public Message reply_success(String _body)
+    public static State stringToState(String _state)
     {
-	return new Message(to,from,Type.ACK,_body);
+	if(_state.equals("SUBMIT")) return State.SUBMIT;
+	if(_state.equals("SUCCESS")) return State.SUCCESS;
+	if(_state.equals("ERROR")) return State.ERROR;
+	return State.UNKNOWN;	
     }
 
-    public Message reply_error(String _body)
+    public void reply_success()
     {
-	return new Message(to,from,Type.ERROR,_body);
+	String to_tmp = to;
+	to = from;
+	from = to_tmp;
+	setState(State.SUCCESS);
+    }
+
+    public void reply_error(Integer _errno)
+    {
+	String to_tmp = to;
+	to = from;
+	from = to_tmp;
+	setState(State.ERROR);
+	setErrno(_errno);
     }
 
 }

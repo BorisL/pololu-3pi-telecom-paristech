@@ -19,14 +19,20 @@ else:
     print ' [*] Waiting for messages. To exit press CTRL+C'
 
     def callback(ch, method, properties, body):
-        print " [x] Received %r" % (body,)
-        mess_from = body.partition(";")[0]
-        mess_type = body.partition(";")[2].partition(";")[2].partition(";")[0];
-        mess_body = body.partition(";")[2].partition(";")[2].partition(";")[2];
-        if(mess_type == "TEXT"):
-            i =serhdl.write("t;"+mess_body)
-        rep = serhdl.read(2)
-        print rep
+        
+        print " [x] Received from server %r" % (body,)
+           
+        i =serhdl.write(body+".")
+        rep_c = ''
+        rep = ""
+        while(rep_c != '.'):
+            rep = rep + rep_c
+            rep_c = serhdl.read()
+        print " [x] Received from robot %r" % (rep,)
+        
+        channel.basic_publish(exchange='',
+                      routing_key=rep.rsplit(";")[2],
+                      body=rep)
 
     channel.basic_consume(callback,
                       queue=sys.argv[2],

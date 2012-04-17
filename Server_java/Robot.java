@@ -13,13 +13,15 @@ public class Robot implements Runnable
     
     public Robot(String AMQPServer, String _queueName, String _zigbeeGateway) throws Exception
     {
-	Controler.log(Level.INFO, queueName+" init");
+	Controler.log(Level.INFO, _queueName+" init");
 	queueName = _queueName;
 	zigbeeGateway = _zigbeeGateway;
 	orders = new HashMap<Integer,Order>();
 	messages = new HashMap<Integer,Message>();
 	controler = new Controler();
 	controler.init(AMQPServer, queueName);
+	controler.putXbeeGateway(zigbeeGateway);
+	
     }
 
     public void run()
@@ -29,59 +31,69 @@ public class Robot implements Runnable
 		while (true) 
 		    {
 			Controler.log(Level.INFO, queueName+" waiting message from queue ...");
+			System.out.println("1"+orders+"->"+messages);
 			Message m = controler.receive();
-			
+			System.out.println("2"+orders+"->"+messages);
 			switch(m.getType())
 			    {
 			    case TEXT: 
-				controler.send(m.reply_success("Text sent"));
-				Message _m_t = new Message(queueName, zigbeeGateway, m.getType(), m.getBody());
-				controler.send(_m_t);
-				break;
 			    case MUSIC:
-				controler.send(m.reply_success("Music played"));
-				Message _m_m = new Message(queueName, zigbeeGateway, m.getType(), m.getBody());
-				controler.send(_m_m);
-				break;
 			    case GOSTRAIGHT: 
 			    case TURNLEFT: 
 			    case TURNRIGHT: 
 				Order o = new Order(controler,this,m);
 				orders.put(o.ID,o);
 				messages.put(o.ID,m);
+				m.setId(o.ID);
 				
-				Message _m = new Message(queueName, zigbeeGateway, m.getType(), o.ID.toString());
-				controler.send(_m);
+				controler.sendXbee(m);
 				o.start();
 				
 				break;
 			    
 			    case ACK:
 			    case ERROR:
-				Integer id = new Integer(m.getBody());
+				
+				Integer id = new Integer(m.getId());
+				System.out.println(id); 
+				System.out.println("3"+orders);
 				if(orders.containsKey(id))
 				    {
 				Message m_r = messages.get(id);
 				
 				if(m.getType().equals(Message.Type.ACK))
-				    controler.send(m_r.reply_success("Order sent"));
+				    {
+					m_r.reply_success();
+					controler.send(m_r);
+				    }
 				else
-				    controler.send(m_r.reply_error("Order error"));
+				    {
+					m_r.reply_error(1);
+					controler.send(m_r);
+				    }
+				Controler.log(Level.INFO, "Remove Id "+id);
 				orders.get(id).finish();
 				orders.remove(id);
 				messages.remove(id);
 				    }
 				else //the order already reach the timeout
-				    {/* nothing to do */}
+				    {
+					/* nothing to do */
+					Controler.log(Level.INFO, queueName+" order id not found");
+					
+				    }
 			break;
 			    default: 
-				controler.send(m.reply("UNKNOWN"));
+				{
+				    m.reply_error(-1);
+				    controler.send(m);
+				}
 			    }
 		    
 		    
 		}
 	    }
-	catch(Exception e) {}
+	catch(Exception e) {Controler.log(Level.INFO, " ERROR !!!");}
 	
     }
 
