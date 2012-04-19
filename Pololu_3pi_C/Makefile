@@ -14,7 +14,7 @@ PORT ?= /dev/ttyACM0
 AVRDUDE=avrdude
 
 TARGET=test
-OBJECT_FILES=test.o
+OBJECT_FILES=test.o order.o sensor_uty.o
 
 all: $(TARGET).hex
 
@@ -24,7 +24,7 @@ clean:
 %.hex: %.obj
 	$(OBJ2HEX) -R .eeprom -O ihex $< $@
 
-test.o: test.c
+test.o: test.c order.h sensor_uty.o
 
 %.obj: $(OBJECT_FILES)
 	$(CC) $(CFLAGS) $(OBJECT_FILES) $(LDFLAGS) -o $@

@@ -8,7 +8,7 @@ if (len(sys.argv) != 3):
     print("Usage: python XBee_com AMQPServerAdress ZigbeeName")
     
 else:
-    serhdl = serial.Serial("/dev/ttyUSB0")
+    serhdl = serial.Serial("/dev/ttyUSB0",timeout=60)
     
     connection = pika.BlockingConnection(pika.ConnectionParameters(
             host=sys.argv[1]))
@@ -25,12 +25,20 @@ else:
         i =serhdl.write(body+".")
         rep_c = ''
         rep = ""
+        error = 0
         while(rep_c != '.'):
             rep = rep + rep_c
             rep_c = serhdl.read()
+            
+            #if(rep == ''):
+            #timeout reach
+                #print "\t Timeout reach"
+                #rep_c = '.' 
+                #error = 1
+                
         print " [x] Received from robot %r" % (rep,)
-        
-        channel.basic_publish(exchange='',
+        if(error == 0):
+            channel.basic_publish(exchange='',
                       routing_key=rep.rsplit(";")[2],
                       body=rep)
 
