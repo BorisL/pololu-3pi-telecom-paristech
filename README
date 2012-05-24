@@ -5,7 +5,28 @@ e-mail : boris.liger@gmail.com
 
 This project provide programs and libraries to controle a Pololu 3pi robot (www.pololu.com/catalog/product/975) using an XBee Pro chipset for wireless controle.
 
-The functionnal goal is to offer to 1st years students (from Telecom ParisTech) a new project subject. They will implement a client program (in Java) which send orders to the Pololu 3pi and explor an unknown maze. They will use a given library and use proposed functions to move the robot.
+The functionnal goal is to offer to 1st years students (from Telecom ParisTech) a new project subject. They will implement a client program (in Java) which send orders to the Pololu 3pi and explor an unknown maze. They will use a given library and use basic functions to move the robot.
 
-This project propose one C code for Pololu 3pi robot. One server code in Java which takes order from clients and sends real orders to 3pi robot. And some clients codes to send basics order.
+This project propose one C code for Pololu 3pi robot. One server code in Java which takes order from clients and sends real orders to 3pi robot. 
 
+To use the software you need to :
+0) Install RabbitMQ-java on your system (http://www.rabbitmq.com/download.html) 
+1) Recompile the Controler library
+In the Controler_lib folder edit the Makefile and change the target RABBITMQ by the installation path of RabbitMQ-java on your system. And run the command "make all".
+2) Recompile Server_java, XBee, and Client_control_java
+In each folder run the command "make all". If you change the original path of the Controler library you need to change in each Makefile the target  CONTROLER with the new path of Controler.jar file.
+3) Load pololu's program
+Load the program on the pololu using the command "make program" in the folder Pololu_3pi_C. You need to install the libpololu-avr (http://www.pololu.com/docs/0J20/2.a).
+
+You are now ready to test the software.
+
+To control the pololu you need to :
+1) Run Server_java, and Client_control_java
+In each folder edit the start file (respectively startServer, startClient) and change the target RABBITMQ_PATH by your installation path of RabbitMQ-java and the target CONTROLER if you changed the Controler library path. You also need to change the adresse of the RabbitMQ server (localhost by default) on the last line of the file :
+java -cp $CP Server localhost Controler
+Run the command "bash startServer" and "bash startClient" in each folder to start each program.
+2) Run the XBee chipset
+In the folder XBee run the command "startXBee".
+3) Put the Pololu on the maze, and turn the power on
+4) Push the button B on the Pololu to run the initialization 
+5) Use the program startClient to send orders to the Pololu
