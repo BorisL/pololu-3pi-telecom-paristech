@@ -29,26 +29,68 @@ void autoCalibration()
   set_motors(0,0); 
 } 
 
+char evaluateDirection(int* sensors)
+{
+
+  if(sensors[0] > 300  && sensors[4] > 300)
+    dir = ' ';
+    return 's';
+  if(
+     sensors[2] > 300  
+     )
+    return 'g'; // go
+  if(     sensors[1] > 300  
+     )
+    return 'l'; // turn left
+  if(
+     sensors[3] > 300  
+     )
+    return 'r'; // turn right
+  if(
+     sensors[0] > 400  
+     )
+    {
+      dir = 'l';
+      return 'L';
+    }
+    
+     if(
+     sensors[4] > 400  
+     )
+       {
+	 dir = 'r';
+	 return 'R';
+       }
+     
+  return 's'; // stop
+}
+
 void processSensors(int* sensors)
 {
-if(dir == 's')
+if(dir != ' ')
 	{
-	  if(sensors[0] < 500 &&
-	     sensors[1] < 500 && 
-	     sensors[2] > 700 && 
-	     sensors[3] < 500 && 
-	     sensors[4] < 500)
-	    {set_motors(25,25);} //go straight
-	  else 
+	  if(dir == 's')
 	    {
-	      if(sensors[0] < 500 &&
-		 sensors[1] > 700 && 
-		 sensors[2] < 500 && 
-		 sensors[3] < 500 && 
-		 sensors[4] < 500)
-		{}
+	  char choice = evaluateDirection(sensors);
+	  switch(choice)
+	    {
+	    case 'g': set_motors(25,25); break;
+	    case 'l': set_motors(10,25); break;
+	    case 'r': set_motors(25,10); break;
+	    case 'R': set_motors(25,-25); break;
+	    case 'L': set_motors(-25,25); break;
+	    case 's': set_motors(0,0); break;
 	    }
-	  if(sensors[1] > 700 && sensors[2] > 700 && sensors[3] > 700)
-		{set_motors(0,0); dir = ' ';}
+	    }
+	  else
+	    {
+	      if(dir == 'l')
+		set_motors(-25,25);
+	      if(dir == 'r')
+		set_motors(25,-25);
+	      if(sensors[2] > 300)
+		dir = 's';
+	    }
+	   
 	}
 }

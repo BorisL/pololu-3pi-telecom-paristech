@@ -17,17 +17,19 @@ void process(char* id, char* from, char* to, char* type, char* body, char* state
   if(strcmp(type,"GOSTRAIGHT") == 0) 
     { 
       print("GO STRAIGHT"); 
-      
+      dir = 's';
     } 
  
   if(strcmp(type,"TURNLEFT") == 0) 
     { 
-      print("TURN LEFT");    
+      print("TURN LEFT");  
+      dir = 'L';
     } 
  
 if(strcmp(type,"TURNRIGHT") == 0) 
     { 
-      print("TURN RIGHT");    
+      print("TURN RIGHT");  
+      dir = 'R';
     } 
  
 char rep [500]; 
@@ -60,18 +62,20 @@ void check_for_new_bytes_received()
   char* ptr = id; 
   int order_index = 0;  
   int index =0; 
-
-	 
+  
   while(serial_get_received_bytes() != receive_buffer_position) 
     { 
-		 
+      /*clear();
+      print_long(receive_buffer_position);
+      delay_ms(1000);
+      clear();*/
       // Process the new byte that has just been received. 
       //process_received_byte(receive_buffer[receive_buffer_position]); 
       
         
       ptr[index]=receive_buffer[receive_buffer_position];  
       index ++; 
- 
+     
       if(receive_buffer[receive_buffer_position]==';') 
 	{// next argument 
 	  ptr[index-1]='\0'; 
@@ -94,7 +98,7 @@ void check_for_new_bytes_received()
       if(receive_buffer[receive_buffer_position]=='.') 
 	{// order totaly received 
 	  ptr[index-1]='\0'; 
-	  clear(); 
+	  /*clear(); 
 	  int tempo = 1000; 
 	  print(id);delay_ms(tempo);clear(); 
 	  print(from);delay_ms(tempo);clear(); 
@@ -102,7 +106,7 @@ void check_for_new_bytes_received()
 	  print(type);delay_ms(tempo);clear(); 
 	  print(body);delay_ms(tempo);clear(); 
 	  print(state);delay_ms(tempo);clear(); 
-	  print(errno);delay_ms(tempo);clear(); 
+	  print(errno);delay_ms(tempo);clear(); */
 	  order_index=0; 
 	  ptr = id; 
 	  index = 0; 
@@ -128,6 +132,10 @@ void check_for_new_bytes_received()
       else 
 	{ 
 	  receive_buffer_position++; 
+	  print_long(receive_buffer_position);
+	  delay_ms(1000);
+	  clear();
 	} 
-    } 
+    } print("EXITTTT");
+   delay_ms(5000);
 } 

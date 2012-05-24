@@ -5,7 +5,7 @@
 #include "sensor_uty.h"
  
 char receive_buffer[32]; 
-unsigned char receive_buffer_position = 0; 
+extern unsigned char receive_buffer_position; 
 char send_buffer[32]; 
 char dir; // s = straight; l = left; r = right; 
  
@@ -77,9 +77,10 @@ void initialize()
   // corresponds to 2000*0.4 us = 0.8 ms on our 20 MHz processor. 
   pololu_3pi_init(2000); 
   load_custom_characters(); // load the custom characters 
-	 
+
   autoCalibration(); 
- 
+
+
 } 
  
 int main() 
@@ -90,7 +91,7 @@ int main()
    
   unsigned int sensors[5]; // an array to hold sensor values 
   dir = ' '; 
- 
+  receive_buffer_position = 0;
   // Set the baud rate to 9600 bits per second.  Each byte takes ten bit 
   // times, so you can get at most 960 bytes per second at this speed. 
   serial_set_baud_rate(9600); 
@@ -101,11 +102,13 @@ int main()
  
   clear(); 
   print("Press B"); 
-   
+  int ready = 0;
   while(1) 
     { 
       serial_check(); 
  
+      if(ready)
+	{
       readOrder(); 
  
       // read sensors 
@@ -114,9 +117,9 @@ int main()
       
       delay_ms(100); 
       clear(); 
-       
+       delay_ms(1000); print("Ok..."); 
       processSensors(sensors);
-      
+	}
       if (button_is_pressed(MIDDLE_BUTTON)) 
 	{ 
 		 
@@ -124,8 +127,9 @@ int main()
 	  initialize(); 
 	  clear(); 
 	  print("Ready..."); 
-	  dir = 's';
-	} 
+	  ready = 1;
+	  //dir = 's';
+	  }
     } 
  
   return 0; 

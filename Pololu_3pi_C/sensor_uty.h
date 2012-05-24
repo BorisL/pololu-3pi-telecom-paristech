@@ -5,5 +5,6 @@
 extern char dir;
 
 void autoCalibration();
+char evaluateDirection(int* sensors);
 void processSensors(int* sensors);
 #endif
