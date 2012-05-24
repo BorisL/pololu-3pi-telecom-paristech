@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2012-05-24T21:20:05</date>
-  <millis>1337887205852</millis>
+  <date>2012-05-24T23:07:01</date>
+  <millis>1337893621774</millis>
   <sequence>1</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -13,8 +13,8 @@
   <message>Console handler initialized</message>
 </record>
 <record>
-  <date>2012-05-24T21:20:06</date>
-  <millis>1337887206001</millis>
+  <date>2012-05-24T23:07:01</date>
+  <millis>1337893621918</millis>
   <sequence>2</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -24,8 +24,8 @@
   <message>RabbitMQ queue initialized</message>
 </record>
 <record>
-  <date>2012-05-24T21:20:06</date>
-  <millis>1337887206002</millis>
+  <date>2012-05-24T23:07:01</date>
+  <millis>1337893621919</millis>
   <sequence>3</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -35,8 +35,8 @@
   <message>Purge the queue Boris</message>
 </record>
 <record>
-  <date>2012-05-24T21:20:06</date>
-  <millis>1337887206005</millis>
+  <date>2012-05-24T23:07:01</date>
+  <millis>1337893621922</millis>
   <sequence>4</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -46,19 +46,19 @@
   <message>Send message "-1;Boris;Controler;ADD;Pololu;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:20:06</date>
-  <millis>1337887206014</millis>
+  <date>2012-05-24T23:07:01</date>
+  <millis>1337893621955</millis>
   <sequence>5</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "-1;Controler;Boris;ADD;Pololu;ERROR;2"</message>
+  <message>Receive message "-1;Controler;Boris;ADD;Pololu;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:20:14</date>
-  <millis>1337887214630</millis>
+  <date>2012-05-24T23:07:03</date>
+  <millis>1337893623864</millis>
   <sequence>6</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -68,63 +68,63 @@
   <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:20:31</date>
-  <millis>1337887231669</millis>
+  <date>2012-05-24T23:07:04</date>
+  <millis>1337893624032</millis>
   <sequence>7</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "2;Pololu;Boris;GOSTRAIGHT;;ERROR;3"</message>
+  <message>Receive message "0;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:20:51</date>
-  <millis>1337887251929</millis>
+  <date>2012-05-24T23:07:06</date>
+  <millis>1337893626528</millis>
   <sequence>8</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
+  <message>Send message "-1;Boris;Pololu;MUSIC;L4 V8 MS G G G E-6 B-12 G E-6 B-12 G2 &gt;D &gt;D &gt;D &gt;E-6 B-12 F# E-6 B-12 G2;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:20:52</date>
-  <millis>1337887252094</millis>
+  <date>2012-05-24T23:07:15</date>
+  <millis>1337893635028</millis>
   <sequence>9</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "3;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
+  <message>Receive message "1;Pololu;Boris;MUSIC;L4 V8 MS G G G E-6 B-12 G E-6 B-12 G2 &gt;D &gt;D &gt;D &gt;E-6 B-12 F# E-6 B-12 G2;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:21:08</date>
-  <millis>1337887268345</millis>
+  <date>2012-05-24T23:07:18</date>
+  <millis>1337893638256</millis>
   <sequence>10</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;TURNRIGHT;;SUBMIT;0"</message>
+  <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:21:08</date>
-  <millis>1337887268509</millis>
+  <date>2012-05-24T23:07:18</date>
+  <millis>1337893638417</millis>
   <sequence>11</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "4;Pololu;Boris;TURNRIGHT;;SUCCESS;0"</message>
+  <message>Receive message "2;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:21:12</date>
-  <millis>1337887272387</millis>
+  <date>2012-05-24T23:07:20</date>
+  <millis>1337893640871</millis>
   <sequence>12</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -134,19 +134,19 @@
   <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:21:12</date>
-  <millis>1337887272551</millis>
+  <date>2012-05-24T23:07:21</date>
+  <millis>1337893641038</millis>
   <sequence>13</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "5;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
+  <message>Receive message "3;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:21:43</date>
-  <millis>1337887303947</millis>
+  <date>2012-05-24T23:07:22</date>
+  <millis>1337893642000</millis>
   <sequence>14</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -156,20 +156,64 @@
   <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:21:44</date>
-  <millis>1337887304108</millis>
+  <date>2012-05-24T23:07:22</date>
+  <millis>1337893642159</millis>
   <sequence>15</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "6;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
+  <message>Receive message "4;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:21:53</date>
-  <millis>1337887313800</millis>
+  <date>2012-05-24T23:07:29</date>
+  <millis>1337893649056</millis>
   <sequence>16</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "-1;Boris;Pololu;TURNRIGHT;;SUBMIT;0"</message>
+</record>
+<record>
+  <date>2012-05-24T23:07:29</date>
+  <millis>1337893649218</millis>
+  <sequence>17</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>10</thread>
+  <message>Receive message "5;Pololu;Boris;TURNRIGHT;;SUCCESS;0"</message>
+</record>
+<record>
+  <date>2012-05-24T23:07:39</date>
+  <millis>1337893659295</millis>
+  <sequence>18</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "-1;Boris;Pololu;TURNRIGHT;;SUBMIT;0"</message>
+</record>
+<record>
+  <date>2012-05-24T23:07:39</date>
+  <millis>1337893659455</millis>
+  <sequence>19</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>10</thread>
+  <message>Receive message "6;Pololu;Boris;TURNRIGHT;;SUCCESS;0"</message>
+</record>
+<record>
+  <date>2012-05-24T23:07:49</date>
+  <millis>1337893669640</millis>
+  <sequence>20</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
@@ -178,9 +222,9 @@
   <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:21:53</date>
-  <millis>1337887313959</millis>
-  <sequence>17</sequence>
+  <date>2012-05-24T23:07:49</date>
+  <millis>1337893669799</millis>
+  <sequence>21</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
@@ -189,96 +233,52 @@
   <message>Receive message "7;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:22:01</date>
-  <millis>1337887321892</millis>
-  <sequence>18</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:02</date>
-  <millis>1337887322056</millis>
-  <sequence>19</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "8;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:05</date>
-  <millis>1337887325766</millis>
-  <sequence>20</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:05</date>
-  <millis>1337887325930</millis>
-  <sequence>21</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "9;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:21</date>
-  <millis>1337887341166</millis>
+  <date>2012-05-24T23:07:59</date>
+  <millis>1337893679487</millis>
   <sequence>22</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
+  <message>Send message "-1;Boris;Pololu;TURNRIGHT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:22:21</date>
-  <millis>1337887341335</millis>
+  <date>2012-05-24T23:07:59</date>
+  <millis>1337893679646</millis>
   <sequence>23</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "10;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
+  <message>Receive message "8;Pololu;Boris;TURNRIGHT;;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:22:24</date>
-  <millis>1337887344991</millis>
+  <date>2012-05-24T23:08:03</date>
+  <millis>1337893683872</millis>
   <sequence>24</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
+  <message>Send message "-1;Boris;Pololu;TURNRIGHT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:22:25</date>
-  <millis>1337887345155</millis>
+  <date>2012-05-24T23:08:04</date>
+  <millis>1337893684033</millis>
   <sequence>25</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "11;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
+  <message>Receive message "9;Pololu;Boris;TURNRIGHT;;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:22:27</date>
-  <millis>1337887347248</millis>
+  <date>2012-05-24T23:08:08</date>
+  <millis>1337893688232</millis>
   <sequence>26</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -288,255 +288,58 @@
   <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:22:27</date>
-  <millis>1337887347417</millis>
+  <date>2012-05-24T23:08:08</date>
+  <millis>1337893688399</millis>
   <sequence>27</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "12;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
+  <message>Receive message "10;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:22:28</date>
-  <millis>1337887348953</millis>
+  <date>2012-05-24T23:08:09</date>
+  <millis>1337893689696</millis>
   <sequence>28</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
+  <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:22:29</date>
-  <millis>1337887349117</millis>
+  <date>2012-05-24T23:08:09</date>
+  <millis>1337893689864</millis>
   <sequence>29</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "13;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
+  <message>Receive message "11;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:22:30</date>
-  <millis>1337887350722</millis>
+  <date>2012-05-24T23:08:14</date>
+  <millis>1337893694448</millis>
   <sequence>30</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
+  <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
 </record>
 <record>
-  <date>2012-05-24T21:22:30</date>
-  <millis>1337887350890</millis>
+  <date>2012-05-24T23:08:14</date>
+  <millis>1337893694611</millis>
   <sequence>31</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>10</thread>
-  <message>Receive message "14;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
+  <message>Receive message "12;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
 </record>
-<record>
-  <date>2012-05-24T21:22:32</date>
-  <millis>1337887352491</millis>
-  <sequence>32</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:32</date>
-  <millis>1337887352657</millis>
-  <sequence>33</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "15;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:33</date>
-  <millis>1337887353980</millis>
-  <sequence>34</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:34</date>
-  <millis>1337887354143</millis>
-  <sequence>35</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "16;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:37</date>
-  <millis>1337887357574</millis>
-  <sequence>36</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:37</date>
-  <millis>1337887357744</millis>
-  <sequence>37</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "17;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:39</date>
-  <millis>1337887359070</millis>
-  <sequence>38</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;GOSTRAIGHT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:39</date>
-  <millis>1337887359240</millis>
-  <sequence>39</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "18;Pololu;Boris;GOSTRAIGHT;;SUCCESS;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:39</date>
-  <millis>1337887359959</millis>
-  <sequence>40</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:40</date>
-  <millis>1337887360123</millis>
-  <sequence>41</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "19;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:44</date>
-  <millis>1337887364922</millis>
-  <sequence>42</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;TURNRIGHT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:45</date>
-  <millis>1337887365088</millis>
-  <sequence>43</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "20;Pololu;Boris;TURNRIGHT;;SUCCESS;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:54</date>
-  <millis>1337887374182</millis>
-  <sequence>44</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:22:54</date>
-  <millis>1337887374347</millis>
-  <sequence>45</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "21;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:23:04</date>
-  <millis>1337887384459</millis>
-  <sequence>46</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;TURNRIGHT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:23:04</date>
-  <millis>1337887384626</millis>
-  <sequence>47</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "22;Pololu;Boris;TURNRIGHT;;SUCCESS;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:23:18</date>
-  <millis>1337887398034</millis>
-  <sequence>48</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "-1;Boris;Pololu;TURNLEFT;;SUBMIT;0"</message>
-</record>
-<record>
-  <date>2012-05-24T21:23:18</date>
-  <millis>1337887398199</millis>
-  <sequence>49</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>10</thread>
-  <message>Receive message "23;Pololu;Boris;TURNLEFT;;SUCCESS;0"</message>
-</record>
+</log>
