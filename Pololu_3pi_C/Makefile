@@ -7,14 +7,14 @@ AVRDUDE_DEVICE ?= m168
 
 CFLAGS=-g -Wall -mcall-prologues -mmcu=$(MCU) $(DEVICE_SPECIFIC_CFLAGS) -Os
 CC=avr-gcc
-OBJ2HEX=avr-objcopy 
+OBJ2HEX=avr-objcopy
 LDFLAGS=-Wl,-gc-sections -lpololu_$(DEVICE) -Wl,-relax
 
 PORT ?= /dev/ttyACM0
 AVRDUDE=avrdude
 
 TARGET=test
-OBJECT_FILES=test.o order.o sensor_uty.o
+OBJECT_FILES=test.o
 
 all: $(TARGET).hex
 
@@ -24,7 +24,7 @@ clean:
 %.hex: %.obj
 	$(OBJ2HEX) -R .eeprom -O ihex $< $@
 
-test.o: test.c order.h sensor_uty.o
+test.o: test.c
 
 %.obj: $(OBJECT_FILES)
 	$(CC) $(CFLAGS) $(OBJECT_FILES) $(LDFLAGS) -o $@
