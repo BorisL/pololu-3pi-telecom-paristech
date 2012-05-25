@@ -46,7 +46,10 @@ public class Order extends Thread
 			Controler.log(Level.INFO, "Timeout reached");
 			r.orders.remove(ID);
 			r.messages.remove(ID);
-			m_client.reply_error(3);
+			m_client.setArg("error","Order timeout");
+			String dest = (String)m_client.getArg("to");
+			m_client.setArg("to",m_client.getArg("from"));
+			m_client.setArg("from",dest);	
 			controler.send(m_client);
 		    }
 		else 

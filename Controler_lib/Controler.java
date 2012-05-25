@@ -64,10 +64,15 @@ public class Controler {
 	logger.log(level, message);
     }
 
+    public Boolean checkMessage(Message m)
+    {
+	return m.has("to") && m.has("from") && m.has("order");
+    }
+
     public void send(Message m) throws Exception 
     {
 	logger.log(Level.INFO, "Send message \""+m.getMessage()+"\"");
-	channel.basicPublish("", m.getTo(), null, m.getMessage().getBytes());
+	channel.basicPublish("", (String)m.getArg("to"), null, m.getMessage().getBytes());
     }
 
     public void sendXbee(Message m) throws Exception 

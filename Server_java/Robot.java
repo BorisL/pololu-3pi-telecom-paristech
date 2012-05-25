@@ -26,75 +26,56 @@ public class Robot implements Runnable
 
     public void run()
     {
-	try
+
+	while (true) 
 	    {
-		while (true) 
+		Controler.log(Level.INFO, queueName+" waiting message from queue ...");
+		try{	
+		Message m = controler.receive();
+			
+		if(m.getArg("type").equals("REQUEST"))
 		    {
-			Controler.log(Level.INFO, queueName+" waiting message from queue ...");
-			System.out.println("1"+orders+"->"+messages);
-			Message m = controler.receive();
-			System.out.println("2"+orders+"->"+messages);
-			switch(m.getType())
+			Order o = new Order(controler,this,m);
+			orders.put(o.ID,o);
+			messages.put(o.ID,m);
+			m.setArg("id",o.ID);				
+			controler.sendXbee(m);
+			o.start();
+		    }				
+		if(m.getArg("type").equals("ACK"))
+		    {
+				
+			Integer id = new Integer((String)m.getArg("id"));
+			System.out.println(id); 
+			if(orders.containsKey(id))
 			    {
-			    case TEXT: 
-			    case MUSIC:
-			    case GOSTRAIGHT: 
-			    case TURNLEFT: 
-			    case TURNRIGHT: 
-				Order o = new Order(controler,this,m);
-				orders.put(o.ID,o);
-				messages.put(o.ID,m);
-				m.setId(o.ID);
-				
-				controler.sendXbee(m);
-				o.start();
-				
-				break;
-			    
-			    case ACK:
-			    case ERROR:
-				
-				Integer id = new Integer(m.getId());
-				System.out.println(id); 
-				System.out.println("3"+orders);
-				if(orders.containsKey(id))
-				    {
 				Message m_r = messages.get(id);
 				
-				if(m.getType().equals(Message.Type.ACK))
-				    {
-					m_r.reply_success();
-					controler.send(m_r);
-				    }
-				else
-				    {
-					m_r.reply_error(1);
-					controler.send(m_r);
-				    }
+					
+				//m_r.reply_success();
+				controler.send(m_r);
+					
+					
 				Controler.log(Level.INFO, "Remove Id "+id);
 				orders.get(id).finish();
 				orders.remove(id);
 				messages.remove(id);
-				    }
-				else //the order already reach the timeout
-				    {
-					/* nothing to do */
-					Controler.log(Level.INFO, queueName+" order id not found");
-					
-				    }
-			break;
-			    default: 
-				{
-				    m.reply_error(-1);
-				    controler.send(m);
-				}
 			    }
-		    
-		    
+			else //the order already reach the timeout
+			    {
+				/* nothing to do */
+				Controler.log(Level.INFO, queueName+" order id not found");
+					
+			    }
+		    }
+			     
+			
 		}
-	    }
-	catch(Exception e) {Controler.log(Level.INFO, " ERROR !!!");}
-	
+	    
+	catch(Exception e) 
+	    {System.out.println(e);}   
+	    }	    
     }
-
 }
+   
+	
