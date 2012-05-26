@@ -100,4 +100,10 @@ public class Controler {
 	connection.close();
     }
 
+     public void finalize()
+     {
+	 System.out.println("Finalize ");
+	 close();
+     }
+
 }

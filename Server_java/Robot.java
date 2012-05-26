@@ -38,7 +38,7 @@ public class Robot implements Runnable
 			Order o = new Order(controler,this,m);
 			orders.put(o.ID,o);
 			messages.put(o.ID,m);
-			m.setArg("id",o.ID);				
+			m.setArg("id",o.ID.toString());				
 			controler.sendXbee(m);
 			o.start();
 		    }				

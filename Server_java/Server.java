@@ -19,23 +19,27 @@ public class Server
 	    {
 		Controler.log(Level.INFO, "Waiting message from queue ...");
 		Message m = controler.receive();
-		if(m.getType().equals(Message.Type.ADD) 
-		   && !robots.containsKey(m.getBody()))
+		if(m.getArg("order").equals("ADD") 
+		   && !robots.containsKey(m.getArg("name")))
 		    {
 		    
-			// TODO define zigbee server location
-			Robot robot = new Robot(argv[0],m.getBody(),"XBee");
-			robots.put(m.getBody(),robot);
-			controler.putXbeeGateway("XBee");
+			Robot robot = new Robot(argv[0],(String)m.getArg("name"),(String)m.getArg("xbee"));
+			robots.put((String)m.getArg("name"),robot);
+			controler.putXbeeGateway((String)m.getArg("xbee"));
 			Thread thread = new Thread(robot);
 			thread.start();
-			m.reply_success();
+			String dest = (String)m.getArg("to");
+			m.setArg("to",m.getArg("from"));
+			m.setArg("from",dest);
 			controler.send(m);  
 
 		}
 	    else 
 		{
-		    m.reply_error(2);
+		    String dest = (String)m.getArg("to");
+		    m.setArg("to",m.getArg("from"));
+		    m.setArg("from",dest);
+		    m.setArg("error","name already used");
 		    controler.send(m);
 		}
 	    

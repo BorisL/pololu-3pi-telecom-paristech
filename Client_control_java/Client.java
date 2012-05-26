@@ -38,16 +38,22 @@ public class Client {
 
 	Message m = new Message();	
 	m.setArg("from",argv[1]);
-
+	m.setArg("type","REQUEST");
+	try{
 	switch(new Integer(str))
 	    {
 	    case 0: 
 		System.out.println("Enter the name of the robot");
 		System.out.print("#:");
 		str = sc.nextLine();
+		m.setArg("name",str);
+		System.out.println("Enter the name of Xbee gateway");
+		System.out.print("#:");
+		str = sc.nextLine();
+		m.setArg("xbee",str);
+		
 		m.setArg("to","Controler");
 		m.setArg("order","ADD");
-		m.setArg("name",str);
 		controler.send(m);
 		break;
 
@@ -109,7 +115,9 @@ public class Client {
 		break;
 	    
 	    }
-	
+	}
+	catch(NumberFormatException e)
+	    {System.out.println(e);}
 	    }
 	controler.close();	
 	

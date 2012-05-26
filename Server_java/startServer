@@ -3,5 +3,6 @@
 echo -- start server --
 export RABBITMQ_PATH=../../RabbitMQ-java
 export CONTROLER=../Controler_lib
-export CP=.:$RABBITMQ_PATH/commons-io-1.2.jar:$RABBITMQ_PATH/commons-cli-1.1.jar:$RABBITMQ_PATH/rabbitmq-client.jar:$CONTROLER/Controler.jar
+export JSON=../.
+export CP=.:$RABBITMQ_PATH/commons-io-1.2.jar:$RABBITMQ_PATH/commons-cli-1.1.jar:$RABBITMQ_PATH/rabbitmq-client.jar:$CONTROLER/Controler.jar:$JSON/json-lib-2.4-jdk15.jar:$JSON/commons-lang3-3.1.jar:$JSON/commons-lang-1.0.1.jar:$JSON/ezmorph-1.0.6.jar:$JSON/commons-logging-1.1.1.jar:$JSON/commons-collections-3.2.1.jar:$JSON/commons-beanutils-1.8.3.jar
 java -cp $CP Server localhost Controler

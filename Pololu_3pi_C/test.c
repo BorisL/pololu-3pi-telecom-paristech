@@ -157,7 +157,9 @@ void check_for_new_bytes_received()
        
       ptr[index]=receive_buffer[receive_buffer_position];
       index ++;
-
+      clear();
+      print(ptr);
+      delay_ms(500);
       if(receive_buffer[receive_buffer_position]==';')
 	{// next argument
 	  ptr[index-1]='\0';
@@ -181,7 +183,7 @@ void check_for_new_bytes_received()
 	{// order totaly received
 	  ptr[index-1]='\0';
 	  
-	  /*int tempo = 500;
+	  int tempo = 500;
 	  clear();
 	  int(id);delay_ms(tempo);clear();
 	    print(from);delay_ms(tempo);clear();
@@ -189,7 +191,7 @@ void check_for_new_bytes_received()
 	    print(type);delay_ms(tempo);clear();
 	    print(body);delay_ms(tempo);clear();
 	    print(state);delay_ms(tempo);clear();
-	    print(errno);delay_ms(tempo);clear();*/
+	    print(errno);delay_ms(tempo);clear();
 	  order_index=0;
 	  ptr = id;
 	  index = 0;

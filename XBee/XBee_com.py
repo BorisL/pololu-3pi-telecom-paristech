@@ -23,7 +23,8 @@ else:
     def callback(ch, method, properties, body):
         
         print " [x] Received from server %r" % (body,)          
-        i =xbee.send(body+".")
+        serhdl.write(body);
+#i =xbee.send(body)
         print ' [*] Waiting for messages from server'
 
     channel.basic_consume(callback,
@@ -53,7 +54,7 @@ else:
 
     try:
         listener = threading.Thread(None, listener, None, (), {})
-        listener.start()
+        #listener.start()
         channel.start_consuming()
         
     

@@ -1,3 +1,3 @@
 #!/bin/bash
 #run the XBee server
-python XBee_com.py localhost XBee
+python XBee_com.py localhost xbee
