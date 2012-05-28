@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2012-05-26T19:10:29</date>
-  <millis>1338052229575</millis>
+  <date>2012-05-29T00:16:51</date>
+  <millis>1338243411234</millis>
   <sequence>1</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -13,8 +13,8 @@
   <message>Console handler initialized</message>
 </record>
 <record>
-  <date>2012-05-26T19:10:29</date>
-  <millis>1338052229721</millis>
+  <date>2012-05-29T00:16:51</date>
+  <millis>1338243411376</millis>
   <sequence>2</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -24,8 +24,8 @@
   <message>RabbitMQ queue initialized</message>
 </record>
 <record>
-  <date>2012-05-26T19:10:29</date>
-  <millis>1338052229721</millis>
+  <date>2012-05-29T00:16:51</date>
+  <millis>1338243411377</millis>
   <sequence>3</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -35,8 +35,8 @@
   <message>Purge the queue Boris</message>
 </record>
 <record>
-  <date>2012-05-26T19:10:50</date>
-  <millis>1338052250906</millis>
+  <date>2012-05-29T00:16:56</date>
+  <millis>1338243416450</millis>
   <sequence>4</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -46,8 +46,8 @@
   <message>Send message "{"from":"Boris","type":"REQUEST","name":"pololu","xbee":"xbee","to":"Controler","order":"ADD"}"</message>
 </record>
 <record>
-  <date>2012-05-26T19:10:51</date>
-  <millis>1338052251035</millis>
+  <date>2012-05-29T00:16:56</date>
+  <millis>1338243416568</millis>
   <sequence>5</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -57,156 +57,47 @@
   <message>Receive message "{"from":"Controler","type":"REQUEST","name":"pololu","xbee":"xbee","to":"Boris","order":"ADD"}"</message>
 </record>
 <record>
-  <date>2012-05-26T19:11:03</date>
-  <millis>1338052263829</millis>
+  <date>2012-05-29T00:17:02</date>
+  <millis>1338243422400</millis>
   <sequence>6</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TEXT","text":"hello"}"</message>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
 </record>
 <record>
-  <date>2012-05-26T19:11:20</date>
-  <millis>1338052280885</millis>
+  <date>2012-05-29T00:17:17</date>
+  <millis>1338243437517</millis>
   <sequence>7</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>11</thread>
-  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TEXT","text":"hello","id":"0","error":"Order timeout"}"</message>
+  <message>Receive message "{"id":"0","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
 </record>
 <record>
-  <date>2012-05-26T19:11:32</date>
-  <millis>1338052292844</millis>
+  <date>2012-05-29T00:17:43</date>
+  <millis>1338243463279</millis>
   <sequence>8</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>send</method>
   <thread>10</thread>
-  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TEXT","text":"hello"}"</message>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
 </record>
 <record>
-  <date>2012-05-26T19:11:49</date>
-  <millis>1338052309579</millis>
+  <date>2012-05-29T00:17:44</date>
+  <millis>1338243464939</millis>
   <sequence>9</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>11</thread>
-  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TEXT","text":"hello","id":"1","error":"Order timeout"}"</message>
+  <message>Receive message "{"id":"1","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
 </record>
-<record>
-  <date>2012-05-26T19:16:06</date>
-  <millis>1338052566003</millis>
-  <sequence>10</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TEXT","text":"hello"}"</message>
-</record>
-<record>
-  <date>2012-05-26T19:16:23</date>
-  <millis>1338052583172</millis>
-  <sequence>11</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>11</thread>
-  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TEXT","text":"hello","id":"2","error":"Order timeout"}"</message>
-</record>
-<record>
-  <date>2012-05-26T19:17:08</date>
-  <millis>1338052628660</millis>
-  <sequence>12</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TEXT","text":"hello"}"</message>
-</record>
-<record>
-  <date>2012-05-26T19:17:25</date>
-  <millis>1338052645481</millis>
-  <sequence>13</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>11</thread>
-  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TEXT","text":"hello","id":"3","error":"Order timeout"}"</message>
-</record>
-<record>
-  <date>2012-05-26T19:18:46</date>
-  <millis>1338052726424</millis>
-  <sequence>14</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TEXT","text":"hello"}"</message>
-</record>
-<record>
-  <date>2012-05-26T19:19:03</date>
-  <millis>1338052743612</millis>
-  <sequence>15</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>11</thread>
-  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TEXT","text":"hello","id":"4","error":"Order timeout"}"</message>
-</record>
-<record>
-  <date>2012-05-26T19:21:08</date>
-  <millis>1338052868452</millis>
-  <sequence>16</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TEXT","text":"hello"}"</message>
-</record>
-<record>
-  <date>2012-05-26T19:21:25</date>
-  <millis>1338052885649</millis>
-  <sequence>17</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>11</thread>
-  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TEXT","text":"hello","id":"5","error":"Order timeout"}"</message>
-</record>
-<record>
-  <date>2012-05-26T19:22:02</date>
-  <millis>1338052922069</millis>
-  <sequence>18</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>send</method>
-  <thread>10</thread>
-  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TEXT","text":"hello"}"</message>
-</record>
-<record>
-  <date>2012-05-26T19:22:19</date>
-  <millis>1338052939175</millis>
-  <sequence>19</sequence>
-  <logger>logger</logger>
-  <level>INFO</level>
-  <class>Controler</class>
-  <method>receive</method>
-  <thread>11</thread>
-  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TEXT","text":"hello","id":"6","error":"Order timeout"}"</message>
-</record>
+</log>

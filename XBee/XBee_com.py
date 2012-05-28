@@ -5,13 +5,14 @@ import sys
 import pika
 import time
 import threading
+import json
 
 if (len(sys.argv) != 3):
-    print("Usage: python XBee_com AMQPServerAdress ZigbeeName")
+    print("Usage: python XBee_com AMQPServerAdress XBeeName")
     
 else:
-    serhdl = serial.Serial("/dev/ttyUSB0")
-    xbee = XBee(serhdl)
+    serhdl = serial.Serial("/dev/ttyUSB0",baudrate= 9600,timeout=3)
+    #xbee = XBee(serhdl)
     connection = pika.BlockingConnection(pika.ConnectionParameters(
             host=sys.argv[1]))
     channel = connection.channel()
@@ -23,8 +24,9 @@ else:
     def callback(ch, method, properties, body):
         
         print " [x] Received from server %r" % (body,)          
-        serhdl.write(body);
-#i =xbee.send(body)
+        print serhdl.write(body);
+        
+        #i =xbee.send(body)
         print ' [*] Waiting for messages from server'
 
     channel.basic_consume(callback,
@@ -38,23 +40,29 @@ else:
         global finish 
         global xbee
         finish = False
+        print ' [*] Waiting for messages from robots'
+        rep_s = ""
         while(finish == False):
-            print ' [*] Waiting for messages from robots'
-            
             rep = ""
-            
-            rep = xbee.wait_read_frame()
-            
-                    
-        print " [x] Received from robot %r" % (rep,)
+            rep = serhdl.read()
+                        #rep = xbee.wait_read_frame()
+            rep_s += rep;
+            if(rep=='}'):
+                # message received
+                obj = json.read(rep_s)
+                src = obj['to']
+                obj["type"]="ACK"
+                channel.basic_publish(exchange='',
+                                      routing_key=src,
+                                      body=json.write(obj))
+                print " [x] Received from robot %r" % (rep_s,)
+                rep_s = ""
         
-        channel.basic_publish(exchange='',
-                              routing_key=rep.rsplit(";")[2],
-                              body=rep)
+        
 
     try:
         listener = threading.Thread(None, listener, None, (), {})
-        #listener.start()
+        listener.start()
         channel.start_consuming()
         
     
@@ -62,4 +70,5 @@ else:
         
     # Gracefully close the connection
         connection.close()
-    
+        finish = True
+        time.sleep(5)

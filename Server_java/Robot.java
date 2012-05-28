@@ -49,13 +49,15 @@ public class Robot implements Runnable
 			System.out.println(id); 
 			if(orders.containsKey(id))
 			    {
-				Message m_r = messages.get(id);
+				//Message m_r = messages.get(id);
 				
+				String to = (String)m.getArg("to");
+				m.setArg("to",m.getArg("from")); 
+				m.setArg("from",to);	
+				
+				controler.send(m);
 					
-				//m_r.reply_success();
-				controler.send(m_r);
-					
-					
+				
 				Controler.log(Level.INFO, "Remove Id "+id);
 				orders.get(id).finish();
 				orders.remove(id);
