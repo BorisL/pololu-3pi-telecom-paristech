@@ -5,11 +5,13 @@
 char receive_buffer[500];
 unsigned char receive_buffer_position = 0;
 char send_buffer[32];
-char ptr[500];
+char ptr[300];
 int is_order =0;
-char message[500];
+int is_body =0;
+char message[200];
+char last_message[200];
 char order[50];
-
+char body[50];
 int order_index = 0;
 int index =0;
 int index_ptr = 0;
@@ -104,48 +106,50 @@ void autoCalibration()
   set_motors(0,0);
 }
 
-void process(char* order,char* body)
+void process()
 {
-  if(order != 0)
-    {
-      clear();
-      print(order);
-      delay_ms(1000);
-    }
-  
+    
   if(strcmp(order,"TEXT") == 0)
     {
       clear();
       print(body);   
-      delay_ms(500);
+      delay_ms(1000);
+      serial_send_blocking(message,strlen(message));
     }
   if(strcmp(order,"MUSIC") == 0)
     {
       play(body);
       while(is_playing()){}
+      serial_send_blocking(message,strlen(message));
     }
 
   if(strcmp(order,"GOSTRAIGHT") == 0)
     {
       print("GO STRAIGHT");
-      dir='s';
-      serial_send_blocking(message,strlen(message));
+      state = 'f';
+      //serial_send_blocking(message,strlen(message));
     }
 
   if(strcmp(order,"TURNLEFT") == 0)
     {
       print("TURN LEFT");
-      dir = 'l';
+      state = 'l';
+      //serial_send_blocking(message,strlen(message));
     }
 
   if(strcmp(order,"TURNRIGHT") == 0)
     {
       print("TURN RIGHT");
-      dir = 'r';
+      state = 'r';
+      //serial_send_blocking(message,strlen(message));
     }
-
+  
   memset(order,0,50);
-
+  memset(body,0,50);
+  memset(last_message,0,200);
+  strcpy(last_message,message);
+  memset(message,0,200);
+  index=0;
 }
 
 char from[50];
@@ -182,13 +186,27 @@ void check_for_new_bytes_received()
 	      if(is_order == 1)
 		{
 		  strcpy(order,ptr);
+		  clear();
+		  print(order);
+		  delay_ms(1000);
 		  is_order = 0;
 		}
 	      if(strcmp(ptr,"order")==0 && is_order == 0)
 		is_order = 1;
-
+	      if(is_body == 1)
+		{
+		  strcpy(body,ptr);
+		  clear();
+		  print(body);
+		  delay_ms(1000);
+		  is_body = 0;
+		}
+	      if(strcmp(ptr,"body")==0 && is_body == 0)
+		is_body = 1;
 	    }
 	}
+      if(car == '}')
+	process();
 	
       
       
@@ -210,12 +228,13 @@ void readOrder()
 {
   
   check_for_new_bytes_received();
-  process(order,0);
+  
 }
 
 char* evaluateIntersection(int* sensors)
 {
-  char found[3];
+  char* found;
+  found = (char*) malloc(sizeof(char)*3);
   found[0]=0; //found left
   found[2]=0; //found right
   found[1]=0; //found straight
@@ -234,39 +253,54 @@ char* evaluateIntersection(int* sensors)
 
 void followDirection(int* sensors, int position)
 {
+  set_motors(30,30);
   if(sensors[1] > 400 && sensors[2] < 200)
     set_motors(20,30);
   if(sensors[2] < 200 && sensors[3] > 400)
     set_motors(30,20);
-  if(sensors[2] > 400)
-    set_motors(30,30);
 }
 
 void deadEnd(int* sensors, int position)
 {
   set_motors(30,-30);
-  if(sensors[2] > 500 || sensors[1] > 500 || sensors[3] > 500)
+  if(sensors[2] > 300 || sensors[1] > 500 || sensors[3] > 300)
     state = 'f';
 }
 
+int tempoTurn;
 void turnLeft(int* sensors, int position)
 {
-  set_motors(30,-30);
+  set_motors(0,30);
+  if(tempoTurn)
+    {
+    delay_ms(500);
+    tempoTurn = 0;
+    }
   if(sensors[2] > 500 || sensors[1] > 500 || sensors[3] > 500)
+    {
     state = 'f';
-  
+    tempoTurn = 1;
+    }
 }
 
 void turnRight(int* sensors, int position)
 {
-  set_motors(-30,30);
+  set_motors(30,0);
+  if(tempoTurn)
+    {
+    delay_ms(500);
+    tempoTurn = 0;
+    }
   if(sensors[2] > 500 || sensors[1] > 500 || sensors[3] > 500)
-    state = 'f';
+    {
+      state = 'f';
+      tempoTurn = 1;
+    }
 }
 
 int isDeadEnd(int* sensors, int position)
 {
-  return sensors[1] < 100 && sensors[2] < 100 && sensors[3] < 100 && sensors[0] < 100 && sensors[4] < 100;
+  return sensors[1] < 150 && sensors[2] < 150 && sensors[3] < 150 && sensors[0] < 150 && sensors[4] < 150;
 }
 
 int isIntersection(int* sensors, int position)
@@ -282,47 +316,60 @@ int isIntersection(int* sensors, int position)
 
 void processSensors(int* sensors, int position)
 {
-  char* found;
   
-  if(isIntersection(sensors,position)&& state == 'f')
+  
+  
+  if(isIntersection(sensors,position) && state == 'f')
     {
       set_motors(25,25);
-      delay_ms(100);
+      delay_ms(150);
       set_motors(0,0);
-    }
-  else if(isIntersection(sensors,position))
-    {
-      found = evaluateIntersection(sensors); 
-      if(found[0] && !found[1] && !found[2])
+      position = read_line(sensors,IR_EMITTERS_ON); 
+      if(isIntersection(sensors,position))
 	{
-	  // only one possible direction : left 
-	  state = 'l';
-	  return;
+	  char* found = evaluateIntersection(sensors); 
+	  if(found[0] && !found[1] && !found[2])
+	    {
+	      // only one possible direction : left 
+	      state = 'l';
+	      return;
+	    }
+	  if(!found[0] && !found[1] && found[2])
+	    {
+	      // only one possible direction : right
+	      state = 'r';
+	      return;
+	    }
+	  
+	  // multiple direction possible
+	  // send state to user 
+	  // and wait order from user
+	  last_message[strlen(last_message)-1]='\0'; // remove last }
+	  // add intersection info
+	  strcat(last_message,",\"intersection\":\""); 
+	  if(found[0])strcat(last_message,"L");
+	  if(found[1])strcat(last_message,"S");
+	  if(found[2])strcat(last_message,"R");
+	  strcat(last_message,"\"}");
+	  serial_send_blocking(last_message,strlen(last_message));
+	  state = 's';
+	  free(found);
 	}
-      if(!found[0] && !found[1] && found[2])
-	{
-	  // only one possible direction : right
-	  state = 'r';
-	  return;
-	}
-      // multiple direction possible
-      // wait order from user
-      state = 's';
     }
-  else if(isDeadEnd(sensors,position))
+  if(isDeadEnd(sensors,position) && state == 'f')
     {
       state = 'd';
     }
   if(state == 'd')
     deadEnd(sensors,position);
   if(state == 'f')
-    followDirection(sensors,position); // there is a path straight
-  if(state == 's')
-    set_motors(0,0);
+    followDirection(sensors,position); 
   if(state == 'r')
     turnRight(sensors,position);
   if(state == 'l')
     turnLeft(sensors,position);
+  if(state == 's')
+    set_motors(0,0);
 }
 
 
@@ -339,63 +386,47 @@ int main()
 
   // Start receiving bytes in the ring buffer.
   serial_receive_ring(receive_buffer, sizeof(receive_buffer));
-
+pololu_3pi_init(2000); 
   unsigned int sensors[5];
   clear();
   print("Press B");
   int ready = 0;
   dir = ' ';
   nextDir = ' ';
-  state = 'f';
+  state = ' ';
   start = 1;
   while(1)
     {
-      display_readings(sensors);
-      delay_ms(100);
-      clear();
+      
       serial_check();
       if(ready)
 	{
-	  display_readings(sensors);
+	  /*display_readings(sensors);
 	  delay_ms(100);
-	  clear();
+	  clear();*/
 	  readOrder();
 	  // read sensors 
 	  unsigned int position = read_line(sensors,IR_EMITTERS_ON); 
 	  
-	  //processSensors(sensors,position);
+	  processSensors(sensors,position);
 	  
-	  if(button_is_pressed(MIDDLE_BUTTON))
-	    {
-	      wait_for_button_release(MIDDLE_BUTTON);
-	      dir = 'g';
-	    }
-	  if(button_is_pressed(BUTTON_A))
-	    {
-	      wait_for_button_release(BUTTON_A);
-	      dir = 'r';
-	    }
-	  if(button_is_pressed(BUTTON_C))
-	    {
-	      wait_for_button_release(BUTTON_C);
-	      dir = 'l';
-	    }
-	  
+		  
 	}
       if (button_is_pressed(MIDDLE_BUTTON))
 	{
 	  
 	  wait_for_button_release(MIDDLE_BUTTON);
 	  
-	  pololu_3pi_init(2000); 
+	  
 	  load_custom_characters(); // load the custom characters 
 	  autoCalibration();
 	  clear();
 	  print("Ready...");
 	  ready = 1;
-	  //dir = 's';
+
+	  
 	}
     }
-
+  
   return 0;
 }

@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2012-05-29T00:16:51</date>
-  <millis>1338243411234</millis>
+  <date>2012-06-02T19:04:29</date>
+  <millis>1338656669079</millis>
   <sequence>1</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -13,8 +13,8 @@
   <message>Console handler initialized</message>
 </record>
 <record>
-  <date>2012-05-29T00:16:51</date>
-  <millis>1338243411376</millis>
+  <date>2012-06-02T19:04:30</date>
+  <millis>1338656670730</millis>
   <sequence>2</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -24,8 +24,8 @@
   <message>RabbitMQ queue initialized</message>
 </record>
 <record>
-  <date>2012-05-29T00:16:51</date>
-  <millis>1338243411377</millis>
+  <date>2012-06-02T19:04:30</date>
+  <millis>1338656670731</millis>
   <sequence>3</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -35,8 +35,8 @@
   <message>Purge the queue Boris</message>
 </record>
 <record>
-  <date>2012-05-29T00:16:56</date>
-  <millis>1338243416450</millis>
+  <date>2012-06-02T19:04:43</date>
+  <millis>1338656683080</millis>
   <sequence>4</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -46,8 +46,8 @@
   <message>Send message "{"from":"Boris","type":"REQUEST","name":"pololu","xbee":"xbee","to":"Controler","order":"ADD"}"</message>
 </record>
 <record>
-  <date>2012-05-29T00:16:56</date>
-  <millis>1338243416568</millis>
+  <date>2012-06-02T19:04:43</date>
+  <millis>1338656683251</millis>
   <sequence>5</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -57,8 +57,8 @@
   <message>Receive message "{"from":"Controler","type":"REQUEST","name":"pololu","xbee":"xbee","to":"Boris","order":"ADD"}"</message>
 </record>
 <record>
-  <date>2012-05-29T00:17:02</date>
-  <millis>1338243422400</millis>
+  <date>2012-06-02T19:04:48</date>
+  <millis>1338656688031</millis>
   <sequence>6</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -68,8 +68,8 @@
   <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
 </record>
 <record>
-  <date>2012-05-29T00:17:17</date>
-  <millis>1338243437517</millis>
+  <date>2012-06-02T19:04:49</date>
+  <millis>1338656689411</millis>
   <sequence>7</sequence>
   <logger>logger</logger>
   <level>INFO</level>
@@ -79,9 +79,31 @@
   <message>Receive message "{"id":"0","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
 </record>
 <record>
-  <date>2012-05-29T00:17:43</date>
-  <millis>1338243463279</millis>
+  <date>2012-06-02T19:04:55</date>
+  <millis>1338656695167</millis>
   <sequence>8</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:04:56</date>
+  <millis>1338656696537</millis>
+  <sequence>9</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"1","type":"ACK","from":"pololu","order":"TURNLEFT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:05:04</date>
+  <millis>1338656704543</millis>
+  <sequence>10</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
@@ -90,14 +112,1675 @@
   <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
 </record>
 <record>
-  <date>2012-05-29T00:17:44</date>
-  <millis>1338243464939</millis>
-  <sequence>9</sequence>
+  <date>2012-06-02T19:05:05</date>
+  <millis>1338656705922</millis>
+  <sequence>11</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>Controler</class>
   <method>receive</method>
   <thread>11</thread>
-  <message>Receive message "{"id":"1","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
+  <message>Receive message "{"id":"2","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:05:26</date>
+  <millis>1338656726031</millis>
+  <sequence>12</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:05:32</date>
+  <millis>1338656732479</millis>
+  <sequence>13</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:05:34</date>
+  <millis>1338656734141</millis>
+  <sequence>14</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"4","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:05:39</date>
+  <millis>1338656739807</millis>
+  <sequence>15</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:05:41</date>
+  <millis>1338656741183</millis>
+  <sequence>16</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"5","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:05:43</date>
+  <millis>1338656743369</millis>
+  <sequence>17</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNLEFT","id":"3","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:05:46</date>
+  <millis>1338656746839</millis>
+  <sequence>18</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:03</date>
+  <millis>1338656763920</millis>
+  <sequence>19</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNLEFT","id":"6","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:10</date>
+  <millis>1338656770335</millis>
+  <sequence>20</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:14</date>
+  <millis>1338656774502</millis>
+  <sequence>21</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"7","type":"ACK","from":"pololu","order":"TURNRIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:26</date>
+  <millis>1338656786671</millis>
+  <sequence>22</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:28</date>
+  <millis>1338656788039</millis>
+  <sequence>23</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"8","type":"ACK","from":"pololu","order":"TURNLEFT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:34</date>
+  <millis>1338656794575</millis>
+  <sequence>24</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:51</date>
+  <millis>1338656811538</millis>
+  <sequence>25</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNRIGHT","id":"9","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:52</date>
+  <millis>1338656812447</millis>
+  <sequence>26</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:53</date>
+  <millis>1338656813825</millis>
+  <sequence>27</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"10","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:58</date>
+  <millis>1338656818591</millis>
+  <sequence>28</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:06:59</date>
+  <millis>1338656819965</millis>
+  <sequence>29</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"11","type":"ACK","from":"pololu","order":"TURNRIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:07:15</date>
+  <millis>1338656835151</millis>
+  <sequence>30</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:07:24</date>
+  <millis>1338656844935</millis>
+  <sequence>31</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:07:26</date>
+  <millis>1338656846314</millis>
+  <sequence>32</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"13","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:07:32</date>
+  <millis>1338656852407</millis>
+  <sequence>33</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:07:32</date>
+  <millis>1338656852491</millis>
+  <sequence>34</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNLEFT","id":"12","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:07:33</date>
+  <millis>1338656853784</millis>
+  <sequence>35</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"14","type":"ACK","from":"pololu","order":"TURNRIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:07:44</date>
+  <millis>1338656864255</millis>
+  <sequence>36</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:07:52</date>
+  <millis>1338656872799</millis>
+  <sequence>37</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:07:55</date>
+  <millis>1338656875286</millis>
+  <sequence>38</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"16","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:08:01</date>
+  <millis>1338656881685</millis>
+  <sequence>39</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNLEFT","id":"15","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:12:17</date>
+  <millis>1338657137439</millis>
+  <sequence>40</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:12:18</date>
+  <millis>1338657138818</millis>
+  <sequence>41</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"17","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:13:38</date>
+  <millis>1338657218999</millis>
+  <sequence>42</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:13:52</date>
+  <millis>1338657232791</millis>
+  <sequence>43</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:13:54</date>
+  <millis>1338657234170</millis>
+  <sequence>44</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"id":"19","type":"ACK","from":"pololu","order":"GOSTRAIGHT","to":"Boris"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:13:56</date>
+  <millis>1338657236099</millis>
+  <sequence>45</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"18","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:15:22</date>
+  <millis>1338657322327</millis>
+  <sequence>46</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:15:39</date>
+  <millis>1338657339223</millis>
+  <sequence>47</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"20","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:16:40</date>
+  <millis>1338657400415</millis>
+  <sequence>48</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:16:57</date>
+  <millis>1338657417542</millis>
+  <sequence>49</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"21","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:18:43</date>
+  <millis>1338657523608</millis>
+  <sequence>50</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:18:49</date>
+  <millis>1338657529896</millis>
+  <sequence>51</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:18:52</date>
+  <millis>1338657532358</millis>
+  <sequence>52</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LSR","type":"ACK","id":"23"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:19:00</date>
+  <millis>1338657540832</millis>
+  <sequence>53</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"22","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:21:17</date>
+  <millis>1338657677576</millis>
+  <sequence>54</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:21:20</date>
+  <millis>1338657680072</millis>
+  <sequence>55</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"","type":"ACK","id":"24"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:22:16</date>
+  <millis>1338657736592</millis>
+  <sequence>56</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:22:18</date>
+  <millis>1338657738839</millis>
+  <sequence>57</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"","type":"ACK","id":"25"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:26:01</date>
+  <millis>1338657961768</millis>
+  <sequence>58</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:26:09</date>
+  <millis>1338657969456</millis>
+  <sequence>59</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:26:11</date>
+  <millis>1338657971714</millis>
+  <sequence>60</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"27"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:26:18</date>
+  <millis>1338657978801</millis>
+  <sequence>61</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"26","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:28:21</date>
+  <millis>1338658101192</millis>
+  <sequence>62</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:28:38</date>
+  <millis>1338658118131</millis>
+  <sequence>63</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"28","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:29:57</date>
+  <millis>1338658197240</millis>
+  <sequence>64</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:30:14</date>
+  <millis>1338658214157</millis>
+  <sequence>65</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"29","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:30:44</date>
+  <millis>1338658244464</millis>
+  <sequence>66</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:30:46</date>
+  <millis>1338658246947</millis>
+  <sequence>67</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LR","type":"ACK","id":"30"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:30:59</date>
+  <millis>1338658259912</millis>
+  <sequence>68</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:31:04</date>
+  <millis>1338658264364</millis>
+  <sequence>69</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNRIGHT","to":"Boris","intersection":"LR","type":"ACK","id":"31"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:31:18</date>
+  <millis>1338658278200</millis>
+  <sequence>70</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:31:22</date>
+  <millis>1338658282546</millis>
+  <sequence>71</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"32"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:31:37</date>
+  <millis>1338658297009</millis>
+  <sequence>72</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:31:53</date>
+  <millis>1338658313948</millis>
+  <sequence>73</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"33","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:31:59</date>
+  <millis>1338658319240</millis>
+  <sequence>74</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:32:05</date>
+  <millis>1338658325033</millis>
+  <sequence>75</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNLEFT","to":"Boris","intersection":"LR","type":"ACK","id":"34"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:32:28</date>
+  <millis>1338658348248</millis>
+  <sequence>76</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:32:35</date>
+  <millis>1338658355403</millis>
+  <sequence>77</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNLEFT","to":"Boris","intersection":"LS","type":"ACK","id":"35"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:32:43</date>
+  <millis>1338658363640</millis>
+  <sequence>78</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:33:00</date>
+  <millis>1338658380744</millis>
+  <sequence>79</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNLEFT","id":"36","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:33:01</date>
+  <millis>1338658381681</millis>
+  <sequence>80</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:33:05</date>
+  <millis>1338658385721</millis>
+  <sequence>81</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNRIGHT","to":"Boris","intersection":"LR","type":"ACK","id":"37"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:33:16</date>
+  <millis>1338658396761</millis>
+  <sequence>82</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:33:22</date>
+  <millis>1338658402501</millis>
+  <sequence>83</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNLEFT","to":"Boris","intersection":"LR","type":"ACK","id":"38"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:33:56</date>
+  <millis>1338658436184</millis>
+  <sequence>84</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:34:09</date>
+  <millis>1338658449337</millis>
+  <sequence>85</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:34:13</date>
+  <millis>1338658453314</millis>
+  <sequence>86</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"39","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:34:15</date>
+  <millis>1338658455618</millis>
+  <sequence>87</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNLEFT","to":"Boris","intersection":"LSR","type":"ACK","id":"40"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:37:28</date>
+  <millis>1338658648689</millis>
+  <sequence>88</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:37:36</date>
+  <millis>1338658656396</millis>
+  <sequence>89</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"41"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:37:44</date>
+  <millis>1338658664225</millis>
+  <sequence>90</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:37:53</date>
+  <millis>1338658673060</millis>
+  <sequence>91</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"42"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:37:59</date>
+  <millis>1338658679753</millis>
+  <sequence>92</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:38:08</date>
+  <millis>1338658688622</millis>
+  <sequence>93</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"43"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:38:14</date>
+  <millis>1338658694137</millis>
+  <sequence>94</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:38:31</date>
+  <millis>1338658711189</millis>
+  <sequence>95</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"44","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:39:41</date>
+  <millis>1338658781345</millis>
+  <sequence>96</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:39:49</date>
+  <millis>1338658789056</millis>
+  <sequence>97</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"45"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:40:02</date>
+  <millis>1338658802089</millis>
+  <sequence>98</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:40:11</date>
+  <millis>1338658811171</millis>
+  <sequence>99</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNLEFT","to":"Boris","intersection":"LS","type":"ACK","id":"46"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:40:58</date>
+  <millis>1338658858977</millis>
+  <sequence>100</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:41:04</date>
+  <millis>1338658864303</millis>
+  <sequence>101</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"47"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:41:14</date>
+  <millis>1338658874833</millis>
+  <sequence>102</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:41:18</date>
+  <millis>1338658878867</millis>
+  <sequence>103</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNRIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"48"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:41:25</date>
+  <millis>1338658885905</millis>
+  <sequence>104</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:41:29</date>
+  <millis>1338658889454</millis>
+  <sequence>105</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNLEFT","to":"Boris","intersection":"LS","type":"ACK","id":"49"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:41:52</date>
+  <millis>1338658912497</millis>
+  <sequence>106</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:42:05</date>
+  <millis>1338658925913</millis>
+  <sequence>107</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:42:09</date>
+  <millis>1338658929635</millis>
+  <sequence>108</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNLEFT","id":"50","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:42:09</date>
+  <millis>1338658929931</millis>
+  <sequence>109</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"51"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:42:15</date>
+  <millis>1338658935001</millis>
+  <sequence>110</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:42:25</date>
+  <millis>1338658945498</millis>
+  <sequence>111</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"52"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:42:33</date>
+  <millis>1338658953665</millis>
+  <sequence>112</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:42:42</date>
+  <millis>1338658962737</millis>
+  <sequence>113</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:42:50</date>
+  <millis>1338658970766</millis>
+  <sequence>114</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNRIGHT","id":"53","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:42:53</date>
+  <millis>1338658973254</millis>
+  <sequence>115</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"54"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:43:01</date>
+  <millis>1338658981177</millis>
+  <sequence>116</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:43:05</date>
+  <millis>1338658985207</millis>
+  <sequence>117</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNRIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"55"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:43:10</date>
+  <millis>1338658990937</millis>
+  <sequence>118</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:43:28</date>
+  <millis>1338659008133</millis>
+  <sequence>119</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNLEFT","id":"56","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:46:21</date>
+  <millis>1338659181081</millis>
+  <sequence>120</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:46:26</date>
+  <millis>1338659186479</millis>
+  <sequence>121</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"57"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:46:34</date>
+  <millis>1338659194121</millis>
+  <sequence>122</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:46:40</date>
+  <millis>1338659200013</millis>
+  <sequence>123</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNRIGHT","to":"Boris","intersection":"LSR","type":"ACK","id":"58"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:46:58</date>
+  <millis>1338659218553</millis>
+  <sequence>124</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:47:03</date>
+  <millis>1338659223032</millis>
+  <sequence>125</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNRIGHT","to":"Boris","intersection":"LSR","type":"ACK","id":"59"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:47:56</date>
+  <millis>1338659276178</millis>
+  <sequence>126</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:48:05</date>
+  <millis>1338659285575</millis>
+  <sequence>127</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"60"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:49:00</date>
+  <millis>1338659340881</millis>
+  <sequence>128</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:49:06</date>
+  <millis>1338659346312</millis>
+  <sequence>129</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"61"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:49:19</date>
+  <millis>1338659359793</millis>
+  <sequence>130</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:49:23</date>
+  <millis>1338659363794</millis>
+  <sequence>131</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"62"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:49:33</date>
+  <millis>1338659373921</millis>
+  <sequence>132</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:49:39</date>
+  <millis>1338659379943</millis>
+  <sequence>133</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNLEFT","to":"Boris","intersection":"LSR","type":"ACK","id":"63"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:49:55</date>
+  <millis>1338659395562</millis>
+  <sequence>134</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololo","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:50:21</date>
+  <millis>1338659421033</millis>
+  <sequence>135</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:50:38</date>
+  <millis>1338659438047</millis>
+  <sequence>136</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNRIGHT","id":"64","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:51:46</date>
+  <millis>1338659506194</millis>
+  <sequence>137</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:51:48</date>
+  <millis>1338659508780</millis>
+  <sequence>138</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"65"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:52:02</date>
+  <millis>1338659522154</millis>
+  <sequence>139</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:52:06</date>
+  <millis>1338659526272</millis>
+  <sequence>140</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNRIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"66"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:52:12</date>
+  <millis>1338659532866</millis>
+  <sequence>141</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:52:19</date>
+  <millis>1338659539271</millis>
+  <sequence>142</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"67"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:53:32</date>
+  <millis>1338659612594</millis>
+  <sequence>143</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:53:37</date>
+  <millis>1338659617794</millis>
+  <sequence>144</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"68"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:53:43</date>
+  <millis>1338659623266</millis>
+  <sequence>145</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:53:47</date>
+  <millis>1338659627256</millis>
+  <sequence>146</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"69"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:53:53</date>
+  <millis>1338659633130</millis>
+  <sequence>147</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:54:03</date>
+  <millis>1338659643709</millis>
+  <sequence>148</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"70"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:54:09</date>
+  <millis>1338659649034</millis>
+  <sequence>149</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:54:25</date>
+  <millis>1338659665178</millis>
+  <sequence>150</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:54:26</date>
+  <millis>1338659666173</millis>
+  <sequence>151</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"TURNRIGHT","id":"71","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:54:29</date>
+  <millis>1338659669382</millis>
+  <sequence>152</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNRIGHT","to":"Boris","intersection":"LSR","type":"ACK","id":"72"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:54:39</date>
+  <millis>1338659679514</millis>
+  <sequence>153</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:54:41</date>
+  <millis>1338659681379</millis>
+  <sequence>154</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"GOSTRAIGHT","to":"Boris","intersection":"LS","type":"ACK","id":"73"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:54:45</date>
+  <millis>1338659685586</millis>
+  <sequence>155</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:54:59</date>
+  <millis>1338659699514</millis>
+  <sequence>156</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNLEFT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:55:03</date>
+  <millis>1338659703014</millis>
+  <sequence>157</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"74","error":"Order timeout"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:55:07</date>
+  <millis>1338659707713</millis>
+  <sequence>158</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNLEFT","to":"Boris","intersection":"SR","type":"ACK","id":"75"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:55:12</date>
+  <millis>1338659712882</millis>
+  <sequence>159</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"TURNRIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:55:17</date>
+  <millis>1338659717656</millis>
+  <sequence>160</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","order":"TURNRIGHT","to":"Boris","intersection":"SR","type":"ACK","id":"76"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:55:28</date>
+  <millis>1338659728218</millis>
+  <sequence>161</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>send</method>
+  <thread>10</thread>
+  <message>Send message "{"from":"Boris","type":"REQUEST","to":"pololu","order":"GOSTRAIGHT"}"</message>
+</record>
+<record>
+  <date>2012-06-02T19:55:45</date>
+  <millis>1338659745144</millis>
+  <sequence>162</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>Controler</class>
+  <method>receive</method>
+  <thread>11</thread>
+  <message>Receive message "{"from":"pololu","type":"REQUEST","to":"Boris","order":"GOSTRAIGHT","id":"77","error":"Order timeout"}"</message>
 </record>
 </log>

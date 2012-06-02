@@ -73,7 +73,7 @@ public class Client {
 		System.out.print("#:");
 		str = sc.nextLine();
 		m.setArg("order","TEXT");
-		m.setArg("text",str);
+		m.setArg("body",str);
 		controler.send(m);
 		break;
 	    case 2:
@@ -110,7 +110,7 @@ public class Client {
 		m.setArg("to",str);
 			
 		m.setArg("order","MUSIC");
-		m.setArg("sound","L4 V8 MS G G G E-6 B-12 G E-6 B-12 G2 >D >D >D >E-6 B-12 F# E-6 B-12 G2");
+		m.setArg("body","L4 V8 MS G G G E-6 B-12 G E-6 B-12 G2 >D >D >D >E-6 B-12 F# E-6 B-12 G2");
 		controler.send(m);
 		break;
 	    

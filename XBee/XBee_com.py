@@ -49,13 +49,16 @@ else:
             rep_s += rep;
             if(rep=='}'):
                 # message received
-                obj = json.read(rep_s)
-                src = obj['to']
-                obj["type"]="ACK"
-                channel.basic_publish(exchange='',
+                print " [x] Received from robot %r" % (rep_s,)
+                try:
+                    obj = json.read(rep_s)
+                    src = obj['to']
+                    obj["type"]="ACK"
+                    channel.basic_publish(exchange='',
                                       routing_key=src,
                                       body=json.write(obj))
-                print " [x] Received from robot %r" % (rep_s,)
+                except Exception:
+                    print "Read Exception"
                 rep_s = ""
         
         
