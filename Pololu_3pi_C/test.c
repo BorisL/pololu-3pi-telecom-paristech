@@ -245,7 +245,7 @@ char* evaluateIntersection(int* sensors)
   if(sensors[4] > 150)
     found[2] = 1;
 
-  if(sensors[1] > 150 || sensors[2] > 150 || sensors[3] > 150)
+  if(sensors[1] > 300 || sensors[2] > 300 || sensors[3] > 300)
     found[1] = 1;
 
   return found;
@@ -263,7 +263,7 @@ void followDirection(int* sensors, int position)
 void deadEnd(int* sensors, int position)
 {
   set_motors(30,-30);
-  if(sensors[2] > 300 || sensors[1] > 500 || sensors[3] > 300)
+  if(sensors[2] > 800 || sensors[1] > 700 || sensors[3] > 800)
     state = 'f';
 }
 
@@ -273,7 +273,7 @@ void turnLeft(int* sensors, int position)
   set_motors(0,30);
   if(tempoTurn)
     {
-    delay_ms(500);
+    delay_ms(1000);
     tempoTurn = 0;
     }
   if(sensors[2] > 500 || sensors[1] > 500 || sensors[3] > 500)
@@ -288,7 +288,7 @@ void turnRight(int* sensors, int position)
   set_motors(30,0);
   if(tempoTurn)
     {
-    delay_ms(500);
+    delay_ms(1000);
     tempoTurn = 0;
     }
   if(sensors[2] > 500 || sensors[1] > 500 || sensors[3] > 500)
@@ -322,7 +322,7 @@ void processSensors(int* sensors, int position)
   if(isIntersection(sensors,position) && state == 'f')
     {
       set_motors(25,25);
-      delay_ms(150);
+      delay_ms(200);
       set_motors(0,0);
       position = read_line(sensors,IR_EMITTERS_ON); 
       if(isIntersection(sensors,position))
